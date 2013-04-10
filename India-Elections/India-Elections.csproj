@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C8CC6612-8827-449B-90B6-BEAF45DF0F60}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>India_Elections</RootNamespace>
+    <AssemblyName>India-Elections</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.3.0.20105.1\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.1.0.20105.408\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelURL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="IMG\Kumar-Bangarappa.jpg" />
+    <Content Include="IMG\NoImage.jpg" />
+    <Content Include="IMG\parameshwra.jpg" />
+    <Content Include="IMG\Shivaram.jpg" />
+    <Content Include="PublicContent\AssemblyCandidateList.json" />
+    <Content Include="PublicContent\AssemblyParty.json" />
+    <Content Include="PublicContent\ExitPollAssemblyState.json" />
+    <Content Include="PublicContent\ExitPollLokSabhaState.json" />
+    <Content Include="PublicContent\ExitPolls.json" />
+    <Content Include="PublicContent\GeneralCandidate.json" />
+    <Content Include="PublicContent\HeavyWeight.json" />
+    <Content Include="PublicContent\HeavyWeightAssembly.json" />
+    <Content Include="PublicContent\LokSabhaParty.json" />
+    <Content Include="PublicContent\Schedule.json" />
+    <Content Include="PublicContent\ScheduleAssembly.json" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="IMG\1349869208-GITANJALI-2_mini.jpg" />
+    <Content Include="IMG\1349939865-Upto66Offer_mini.jpg" />
+    <Content Include="IMG\1350053015-Denim_HP_mini.jpg" />
+    <Content Include="IMG\61282_547113868651405_1589956880_n.jpg" />
+    <Content Include="IMG\64367_156169021080205_5677478_n.jpg" />
+    <Content Include="IMG\accent.png" />
+    <Content Include="IMG\AngularJS-small.png" />
+    <Content Include="IMG\arrow-down-tiny.png" />
+    <Content Include="IMG\aspNetHome.png" />
+    <Content Include="IMG\BeniSoftLabs.jpg" />
+    <Content Include="IMG\benisoftlabs.png" />
+    <Content Include="IMG\bg-footpatt.jpg" />
+    <Content Include="IMG\bg-toppatt.jpg" />
+    <Content Include="IMG\bjp1.jpg" />
+    <Content Include="IMG\BJPThumb.jpg" />
+    <Content Include="IMG\bootstrap-mdo-sfmoma-01.jpg" />
+    <Content Include="IMG\bootstrap-mdo-sfmoma-02.jpg" />
+    <Content Include="IMG\bootstrap-mdo-sfmoma-03.jpg" />
+    <Content Include="IMG\BrijBushan.jpg" />
+    <Content Include="IMG\bs-docs-bootstrap-features.png" />
+    <Content Include="IMG\bs-docs-masthead-pattern.png" />
+    <Content Include="IMG\bs-docs-responsive-illustrations.png" />
+    <Content Include="IMG\bs-docs-twitter-github.png" />
+    <Content Include="IMG\bullet.png" />
+    <Content Include="IMG\chandrepal.jpg" />
+    <Content Include="IMG\conference_textless_96.png" />
+    <Content Include="IMG\DharmedraYadav.jpg" />
+    <Content Include="IMG\dimple_yadav_190.jpg" />
+    <Content Include="IMG\exhibition_textless_96.png" />
+    <Content Include="IMG\facebook.png" />
+    <Content Include="IMG\festival_textless_96.png" />
+    <Content Include="IMG\findHosting.png" />
+    <Content Include="IMG\fleche1.png" />
+    <Content Include="IMG\fleche2.png" />
+    <Content Include="IMG\glyphicons-halflings-white.png" />
+    <Content Include="IMG\glyphicons-halflings.png" />
+    <Content Include="IMG\grid-baseline-20px.png" />
+    <Content Include="IMG\heroAccent.png" />
+    <Content Include="IMG\HTML5.png" />
+    <Content Include="IMG\INCTHUMB.png" />
+    <Content Include="IMG\Ind.png" />
+    <Content Include="IMG\index.jpg" />
+    <Content Include="IMG\JDS.jpg" />
+    <Content Include="IMG\less-logo-large.png" />
+    <Content Include="IMG\maillogo.png" />
+    <Content Include="IMG\mainlogo.png" />
+    <Content Include="IMG\modi.jpg" />
+    <Content Include="IMG\my_ons_textless_96.png" />
+    <Content Include="IMG\New-sprite.png" />
+    <Content Include="IMG\Nodejsfinal.png" />
+    <Content Include="IMG\NuGetGallery.png" />
+    <Content Include="IMG\octocat-spinner-128.gif" />
+    <Content Include="IMG\ons_events_textless_96.png" />
+    <Content Include="IMG\ons_information_textless_96.png" />
+    <Content Include="IMG\OpenSource.png" />
+    <Content Include="IMG\orderedList0.png" />
+    <Content Include="IMG\orderedList1.png" />
+    <Content Include="IMG\orderedList2.png" />
+    <Content Include="IMG\orderedList3.png" />
+    <Content Include="IMG\orderedList4.png" />
+    <Content Include="IMG\orderedList5.png" />
+    <Content Include="IMG\orderedList6.png" />
+    <Content Include="IMG\orderedList7.png" />
+    <Content Include="IMG\orderedList8.png" />
+    <Content Include="IMG\orderedList9.png" />
+    <Content Include="IMG\responsive-illustrations.png" />
+    <Content Include="IMG\SP.png" />
+    <Content Include="IMG\thumb64.jpg" />
+    <Content Include="IMG\thumb64bsp.jpg" />
+    <Content Include="IMG\twitter.png" />
+    <Content Include="IMG\Untitled.PNG" />
+    <Content Include="IMG\Untitled1.png" />
+    <Content Include="IMG\window-tile.png" />
+    <Content Include="IMG\windowsLive.png" />
+    <Content Include="IMG\yedurappa.jpg" />
+    <Content Include="partials\AssemblyDetail.html" />
+    <Content Include="partials\CandidateDetail.html" />
+    <Content Include="partials\CandidateDetailAssembly.html" />
+    <Content Include="partials\ConstestingCandidate.html" />
+    <Content Include="partials\Constituency.html" />
+    <Content Include="partials\ConstituencyAssembly.html" />
+    <Content Include="partials\ConstituencyByState.html" />
+    <Content Include="partials\ExitLokSabha.html" />
+    <Content Include="partials\ExitPoll.html" />
+    <Content Include="partials\ExitPollAssembly.html" />
+    <Content Include="partials\ExitPollAssemblyDetail.html" />
+    <Content Include="partials\GeneralElection.html" />
+    <Content Include="partials\HeavyWeight.html" />
+    <Content Include="partials\HeavyWeightAssembly.html" />
+    <Content Include="partials\indexpage.html" />
+    <Content Include="partials\politicalParty.html" />
+    <Content Include="partials\PoliticalPartyAssembly.html" />
+    <Content Include="partials\Schedule.html" />
+    <Content Include="partials\ScheduleAssembly.html" />
+    <Content Include="Scripts\App.js" />
+    <Content Include="Scripts\bootstrap-dropdown.js" />
+    <Content Include="Scripts\Collapse.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="stylesheets\bootstrap-responsive.css" />
+    <Content Include="stylesheets\bootstrap.css" />
+    <Content Include="stylesheets\Doc.css" />
+    <Content Include="stylesheets\style.css" />
+    <Content Include="Views\Home\phantomjs-runner.js" />
+    <Content Include="Views\Home\Snapshot.txt" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\AssemblyElectionsKarnataka.cshtml" />
+    <Content Include="Views\Home\ConstituencyAssembly.cshtml" />
+    <Content Include="Views\Home\ExitAssembly.cshtml" />
+    <Content Include="Views\Home\ExitAssemblyKarnataka.cshtml" />
+    <Content Include="Views\Home\ExitLokSabha.cshtml" />
+    <Content Include="Views\Home\ExitPoll.cshtml" />
+    <Content Include="Views\Home\generalelections.cshtml" />
+    <Content Include="Views\Home\HeavyWeights.cshtml" />
+    <Content Include="Views\Home\HeavyWeightsAssemblyKarnataka.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Home\politicalPartyAssembly.cshtml" />
+    <Content Include="Views\Home\Schedule.cshtml" />
+    <Content Include="Views\Home\ScheduleAssemblyKarnataka.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57526/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

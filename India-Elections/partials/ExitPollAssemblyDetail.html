@@ -1,0 +1,39 @@
+﻿<div class="container-fluid ">
+   <div class="span3">
+    <div class="row-fluid">
+    <ul class="nav nav-pills nav-stacked" style="margin-top:10px;">
+              <li ng-class="{true:'active'}[selectedState == 'Karnataka']"><a href="#!/assemblyelections/Karnataka">Karnataka</a></li>
+            </ul>
+         </div>
+        </div>
+      <div class="span9" >
+         <div class="container-fluid">
+        <div class="row-fluid">
+             <ul class="breadcrumb" style="margin-top: 10px;">
+              <li><a href="#!/api/assemblyelections/{{selectedState}}" >Candidate</a> <span class="divider">/</span></li>
+             <li><a href="#!/api/ScheduleAssembly/{{selectedState}}">Schedule</a> <span class="divider">/</span></li>
+             <li><a href="#!/api/HeavyWeightsAssembly/{{selectedState}}">HeavyWeights</a> <span class="divider">/</span></li>
+            <li class="active">ExitPoll<span class="divider">/</span></li>
+        </ul>
+        </div>
+    
+        <div class="span2 rounderCorner" ng-repeat="exitpoll in exitpolldata">
+            <div class="row-fluid" >
+            <button class="btn" type="button"><i class="icon-align-left"></i></button>
+                <span class="label" ng-class="{true:'label-important', false:'label-success'}[$index%2==0]">{{exitpoll.ChannelName}}</span>
+             </div>
+            <div class="row-fluid" >
+                <table class="table table-bordered table-condensed" style="margin-top:5px;">
+                 <tbody>
+                <tr ng-repeat="politicaldata in exitpoll.PartyList">
+                <td ><img ng-src={{politicaldata.Symbol}} style="width:32px;height:28px;"> <a href="">{{politicaldata.PartyName}}</a></td>
+                <td ><span class="badge">{{politicaldata.ProjectedSeats}}</span> </td>
+                 </tr>
+            </tbody></table>
+             </div>
+       </div>
+    </div>
+    </div>
+    </div>
+
+    

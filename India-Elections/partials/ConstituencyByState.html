@@ -1,0 +1,37 @@
+﻿<div class="row-fluid" style="margin-top:10px;margin-bottom:10px;">
+  <ul class="breadcrumb" style="margin-top: 10px;">
+        <li class="active">General Elections 2014<span class="divider">/</span></li>
+        <li><a href="#!/ConstituencyAssembly">Assembly Elections 2013</a> <span class="divider">/</span></li>
+    </ul>
+</div>
+
+<div class="row-fluid" style="margin-top:10px;margin-bottom:10px;">
+    <ul class="alphabetical" style="margin-left:0px;">
+        <li class="tab"><a href="/Constituency"><span>ConstituencyByName</span></a></li>
+        <li class="selected-tab"><a href="/ConstituencyByState"><span>ConstituencyByState</span></a></li>
+    </ul>
+    
+</div>
+
+<div  class="row-fluid" ng-repeat="data in constituencydata">
+  <h4><span id="Andhra_Pradesh"><a title="Andhra Pradesh">{{data.Name}}</a></span></h4>
+<table class="table table-bordered table-striped table-condensed">
+    <thead>
+        <tr>
+            <th>Constituency</th>
+            <th>Name</th>
+            <th>Reserved for (SC/ST/None)</th>
+            <th>Assembly constituency segments</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="rowdata in data.AssemblyList">
+            <td>{{$index+1}}</td>
+            <td><a href="/contestingCandidate/{{rowdata.Name}}">{{rowdata.Name}}</a></td>
+            <td>{{rowdata.Reserverd}}</td>
+            <td>{{rowdata.AssemblySegment}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+

@@ -1,0 +1,35 @@
+﻿<div  class="container-fluid" style="margin-top:10px;">
+    <ul class="breadcrumb" >
+        <li><a href="#!/api/generalelections">Candidate</a> <span class="divider">/</span></li>
+        <li><a href="#!/api/Schedule">Schedule</a> <span class="divider">/</span></li>
+       <li><a href="#!/api/HeavyWeights">HeavyWeights</a> <span class="divider">/</span></li>
+        <li class="active">Exit Poll<span class="divider">/</span></li>
+    </ul>
+</div>
+<div class="container-fluid" style="margin-top:10px;" >
+  <div class="span2">
+            Select State: 
+        <select ng-model="selectedstate" ng-options="c.name for c in state" ng-change="change()">
+             <option value="">-- All State --</option>
+         </select>
+    </div>
+    <div class="span10"><div class="span2 rounderCorner" ng-repeat="exitpoll in exitpolldata">
+            <div class="row-fluid" >
+            <button class="btn" type="button"><i class="icon-align-left"></i></button>
+                <span class="label" ng-class="{true:'label-important', false:'label-success'}[$index%2==0]">{{exitpoll.ChannelName}}</span>
+             </div>
+            <div class="row-fluid" >
+                <table class="table table-bordered table-condensed" style="margin-top:5px;">
+                 <tbody>
+                <tr ng-repeat="politicaldata in exitpoll.PartyList">
+                <td ><img ng-src={{politicaldata.Symbol}} style="width:32px;height:28px;"> <a href="">{{politicaldata.PartyName}}</a></td>
+                <td ><span class="badge">{{politicaldata.ProjectedSeats}}</span> </td>
+                 </tr>
+            </tbody></table>
+             </div>
+       </div>
+    </div>
+
+    </div>
+
+    

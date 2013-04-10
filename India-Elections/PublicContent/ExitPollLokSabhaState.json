@@ -1,0 +1,22 @@
+﻿{
+        "_id" : ObjectId("512f3bb5586a89b7f8d15c40"),
+        "ChannelName" : "NDTV",
+        "State" : "Haryana",
+        "PartyList" : [
+                {
+                        "Symbol" : "../IMG/thumb64.jpg",
+                        "ProjectedSeats" : "7-10",
+                        "PartyName" : "INLD"
+                },
+                {
+                        "Symbol" : "../IMG/INCTHUMB.png",
+                        "ProjectedSeats" : "100-110",
+                        "PartyName" : "I NC"
+                },
+                {
+                        "Symbol" : "../IMG/bjp1.jpg",
+                        "ProjectedSeats" : "140-150",
+                        "PartyName" : "BJP"
+                }
+        ]
+}

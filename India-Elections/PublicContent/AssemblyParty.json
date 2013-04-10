@@ -1,0 +1,26 @@
+﻿{
+        "Name" : "BJP",
+        "LogoImg" : "../IMG/BJPThumb.jpg",
+		"State":"Karnataka"
+}
+	{
+			"Name" : "JD(S)",
+			"LogoImg" : "../IMG/JDS.jpg",
+			"State":"Karnataka"
+	}
+{
+        "Name" : "Congress",
+        "LogoImg" : "../IMG/INCTHUMB.png",
+		"State":"Karnataka"
+}
+
+
+
+//assemblyparty candidates 
+
+{
+        "PartyName" : "Congress",
+        "State" : "Karnataka",
+        "Name" : "BS Yedurappa",
+        "ContenstingAssembly" : "Bangalore South"
+}

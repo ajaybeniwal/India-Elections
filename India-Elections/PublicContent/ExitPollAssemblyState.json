@@ -1,0 +1,27 @@
+﻿{
+        "ChannelName" : "India News",
+        "State" : "Karnataka",
+        "PartyList" : [
+                {
+                        "Symbol" : "../IMG/JDS.jpg",
+                        "ProjectedSeats" : "0",
+                        "PartyName" : "JD(S)"
+                },
+                {
+                        "Symbol" : "../IMG/INCTHUMB.png",
+                        "ProjectedSeats" : "0",
+                        "PartyName" : "INC"
+                },
+                {
+                        "Symbol" : "../IMG/BJPThumb.jpg",
+                        "ProjectedSeats" : "0",
+                        "PartyName" : "BJP"
+                },
+
+				{
+                        "Symbol" : "../IMG/Ind.png",
+                        "ProjectedSeats" : "0",
+                        "PartyName" : "Others"
+                },
+        ]
+}

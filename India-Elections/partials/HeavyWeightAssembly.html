@@ -1,0 +1,50 @@
+﻿<div  class="container-fluid" style="margin-top:10px;">
+      <div class="span3">
+    <div class="row-fluid">
+    <ul class="nav nav-pills nav-stacked" style="margin-top:10px;">
+              <li ng-class="{true:'active'}[selectedState == 'Karnataka']"><a href="#!/api/assemblyelections/Karnataka">Karnataka</a></li>
+            </ul>
+         </div>
+        </div>
+    <div class="span9" >
+     <div class="row-fluid">
+             <ul class="breadcrumb" style="margin-top: 10px;">
+              <li><a href="#!/api/assemblyelections/{{selectedState}}" >Candidate</a> <span class="divider">/</span></li>
+             <li><a href="#!/api/ScheduleAssembly/{{selectedState}}">Schedule</a> <span class="divider">/</span></li>
+             <li class="active">HeavyWeights <span class="divider">/</span></li>
+            <li><a href="#!/api/ExitAssembly/{{selectedState}}">ExitPoll</a> <span class="divider">/</span></li>
+    </ul>
+        </div>
+     
+    <ul class="thumbnails" style="margin-top:10px;">
+        <li class="span2" ng-repeat="candidate in searchData">
+            <div class="thumbnail">
+                  <img alt="300x200"  style="width: 160px; height: 160px;" ng-src={{candidate.ImgLocation}}>
+                  <div class="caption" style="text-align:center">
+                      <h6 style="margin-top:2px ;margin-bottom:2px;"><a href="#!/candidateAssemblyDetail/{{candidate.Name}}">{{candidate.Name}}</a></h6>
+                      <h6 style="margin-top:2px ;margin-bottom:2px;"><a href="#!/contestingAssemblyCandidate/{{candidate.AssemblyName}}">{{candidate.AssemblyName}}</a></h6>
+                      <ul class="meta" style="margin-left:0px;">
+                          <li class="editleft">
+                              <a>
+                                  <img ng-src={{candidate.PartyLogo}} />
+                              </a>
+                          </li>
+                          <li class="edit">
+                              <a title="click here to vote" href=""  ng-click="upvote(candidate.CandidateId,$index)" >
+                                 <i class="icon-thumbs-up"></i>
+                                  <span>{{candidate.VoteCount}}</span>
+                                </a>
+                          </li>
+                          <li class="edit">
+                              <a title="click here to send message" href="#" >
+                                 <i class="icon-edit"></i>
+                                </a>
+                          </li>
+                          
+                      </ul>
+                  </div>
+                </div>
+        </li>
+    </ul>
+ </div>
+ </div> 

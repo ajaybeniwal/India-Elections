@@ -1,0 +1,39 @@
+﻿<div  class="container-fluid" style="margin-top:10px;">
+      <ul class="breadcrumb" >
+        <li><a href="#!/api/generalelections">Candidate</a> <span class="divider">/</span></li>
+        <li><a href="#!/api/Schedule">Schedule</a> <span class="divider">/</span></li>
+        <li class="active">HeavyWeights<span class="divider">/</span></li>
+        <li><a href="#!/api/ExitPoll">Exit Poll</a> <span class="divider">/</span></li>
+    </ul>
+     
+    <ul class="thumbnails" style="margin-top:10px;">
+        <li class="span2" ng-repeat="candidate in searchData">
+            <div class="thumbnail">
+                  <img alt="300x200"  style="width: 160px; height: 160px;" src={{candidate.ImgLocation}}>
+                  <div class="caption" style="text-align:center">
+                      <h6 style="margin-top:2px ;margin-bottom:2px;"><a href="/candidateDetail">{{candidate.Name}}</a></h6>
+                      <h6 style="margin-top:2px ;margin-bottom:2px;"><a href="/constituencyDetail">{{candidate.ContenstingAssembly}}</a></h6>
+                      <ul class="meta" style="margin-left:0px;">
+                          <li class="editleft">
+                              <a>
+                                  <img src={{candidate.PartyLogo}} />
+                              </a>
+                          </li>
+                          <li class="edit">
+                              <a title="Edit this plunk" href="#" >
+                                 <i class="icon-thumbs-up"></i>
+                                  <span>{{candidate.VoteCount}}</span>
+                                </a>
+                          </li>
+                          <li class="edit">
+                              <a title="Edit this plunk"  href="#">
+                                 <i class="icon-edit"></i>
+                                </a>
+                          </li>
+                          
+                      </ul>
+                  </div>
+                </div>
+        </li>
+    </ul>
+ </div> 

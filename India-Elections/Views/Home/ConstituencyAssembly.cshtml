@@ -1,0 +1,1423 @@
+<html ng-app="testdirectivemodule" class="ng-scope"><head>
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="IndiaElections">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://india-elections.in/">
+    <meta name="description" content="India-Election provides info on assembly elections 2013 and general elections 2014.We also provide exit poll data from various assembly elections and list of contesting candidates">
+    <meta name="keywords" content="assembly elections 2013,Recent Election Updates,Recent Political Tweets ,General Elections 2014 ,karnataka assembly elections schedule,karnataka contesting candidates,exit poll karnataka,list of constituencies ,party candidates,exit polls loksabha ,contesting candidates from constituencies">
+    <title>IndiaElections</title>
+    <link rel="stylesheet" href="../../stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="../../stylesheets/DOC.css">
+    <link rel="stylesheet" href="../../stylesheets/bootstrap-responsive.css">
+<style type="text/css">@@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style></head>
+<body data-status="ready">
+    <div class="navbar navbar-fixed-top ">
+        <div class="navbar-inner">
+            <div class="container">
+                <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar collapsed" type="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="" class="brand" style="padding-top: 6px; padding-bottom: 0px;">
+                    <img src="../../IMG/mainlogo.png">
+                </a>
+                <div class="nav-collapse">
+                    <ul class="nav" id="navbar">
+                        <li ng-class="{active:section=='plunks'}" class="active"><a href="/"><i class="icon-home"></i>Home</a></li>
+                        <li><a href="#!/api/generalelections/"><i class="icon-calendar"></i>General Election 2014</a></li>
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <i class="icon-eye-open"></i>Assembly Elections
+                        <b class="caret"></b>
+                        </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#!/api/assemblyelections/Karnataka">Assembly Elections 2013</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="#!/api/ConstituencyAssembly"><i class="icon-th"></i>Constituecy</a></li>
+                        <li ng-class="{active:section=='discuss'}"><a href="#!/api/politicalPartyAssembly"><i class="icon-time"></i>Party Candidates</a></li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="#!/api/ExitLokSabha">
+                            <i class="icon-facetime-video"></i>ExitPolls</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-view="" class="container-fluid" style="margin-top: 40px;"><div class="row-fluid ng-scope" style="margin-top:10px;margin-bottom:10px;">
+    <ul class="breadcrumb" style="margin-top: 10px;">
+        <li class="active">Assembly Elections 2013<span class="divider">/</span></li>
+    </ul>
+</div>
+<div class="container-fluid ng-scope">
+    <div class="span3">
+        Select State: 
+        <select ng-change="change()" ng-options="c.name for c in state" ng-model="selectedstate" class="ng-pristine ng-valid"><option value="0" selected="selected">Karnataka</option></select>
+    </div>
+    <div class="span9">
+        <ul style="margin-top:10px;" class="thumbnails ">
+       <!-- ngRepeat: datacandidate in constituencydata --><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Aland" class="ng-binding">Aland</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Anekal" class="ng-binding">Anekal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Athani" class="ng-binding">Athani</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Afzalpur" class="ng-binding">Afzalpur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Arabhavi" class="ng-binding">Arabhavi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Arkalgud" class="ng-binding">Arkalgud</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Arsikere" class="ng-binding">Arsikere</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Aurad" class="ng-binding">Aurad</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/B.T.M. Layout" class="ng-binding">B.T.M. Layout</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Babaleshwar" class="ng-binding">Babaleshwar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Badami" class="ng-binding">Badami</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bagalkot" class="ng-binding">Bagalkot</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bagepalli" class="ng-binding">Bagepalli</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bailhongal" class="ng-binding">Bailhongal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bangalore South" class="ng-binding">Bangalore South</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bangarapet" class="ng-binding">Bangarapet</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bantval" class="ng-binding">Bantval</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Basavakalyan" class="ng-binding">Basavakalyan</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Basavana Bagevadi" class="ng-binding">Basavana Bagevadi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Basavanagudi" class="ng-binding">Basavanagudi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Belgaum Dakshin" class="ng-binding">Belgaum Dakshin</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Belgaum Rural" class="ng-binding">Belgaum Rural</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Belgaum Uttar" class="ng-binding">Belgaum Uttar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bellary" class="ng-binding">Bellary</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bellary City" class="ng-binding">Bellary City</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Belthangady" class="ng-binding">Belthangady</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Belur" class="ng-binding">Belur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bhadravati" class="ng-binding">Bhadravati</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bhalki" class="ng-binding">Bhalki</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bhatkal" class="ng-binding">Bhatkal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bidar" class="ng-binding">Bidar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bidar South" class="ng-binding">Bidar South</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bijapur City" class="ng-binding">Bijapur City</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bilgi" class="ng-binding">Bilgi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Bommanahalli" class="ng-binding">Bommanahalli</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Byadgi" class="ng-binding">Byadgi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Byatarayanapura" class="ng-binding">Byatarayanapura</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Byndoor" class="ng-binding">Byndoor</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/C.V. Raman Nagar" class="ng-binding">C.V. Raman Nagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Challakere" class="ng-binding">Challakere</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Chamarajanagar" class="ng-binding">Chamarajanagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Chamrajpet" class="ng-binding">Chamrajpet</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Chamundeshwari" class="ng-binding">Chamundeshwari</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Channagiri" class="ng-binding">Channagiri</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Channapatna" class="ng-binding">Channapatna</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Chickpet" class="ng-binding">Chickpet</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Chikkaballapur" class="ng-binding">Chikkaballapur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Chikkodi-Sadalga" class="ng-binding">Chikkodi-Sadalga</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Chikmagalur" class="ng-binding">Chikmagalur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Chiknayakanhalli" class="ng-binding">Chiknayakanhalli</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Chincholi" class="ng-binding">Chincholi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Chintamani" class="ng-binding">Chintamani</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Chitradurga" class="ng-binding">Chitradurga</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Chittapur" class="ng-binding">Chittapur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Dasarahalli" class="ng-binding">Dasarahalli</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Davanagere North" class="ng-binding">Davanagere North</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Davanagere South" class="ng-binding">Davanagere South</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Devadurga" class="ng-binding">Devadurga</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Devanahalli" class="ng-binding">Devanahalli</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Devar Hippargi" class="ng-binding">Devar Hippargi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Dharwad" class="ng-binding">Dharwad</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Doddaballapur" class="ng-binding">Doddaballapur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Gadag" class="ng-binding">Gadag</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Gandhi Nagar" class="ng-binding">Gandhi Nagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Gangawati" class="ng-binding">Gangawati</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Gauribidanur" class="ng-binding">Gauribidanur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Gokak" class="ng-binding">Gokak</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Govindraj Nagar" class="ng-binding">Govindraj Nagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Gubbi" class="ng-binding">Gubbi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Gulbarga Dakshin" class="ng-binding">Gulbarga Dakshin</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Gulbarga Rural" class="ng-binding">Gulbarga Rural</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Gulbarga Uttar" class="ng-binding">Gulbarga Uttar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Gundlupet" class="ng-binding">Gundlupet</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Gurmitkal" class="ng-binding">Gurmitkal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hadagalli" class="ng-binding">Hadagalli</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hagaribommanahalli" class="ng-binding">Hagaribommanahalli</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Haliyal" class="ng-binding">Haliyal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hangal" class="ng-binding">Hangal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hanur" class="ng-binding">Hanur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Harapanahalli" class="ng-binding">Harapanahalli</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Harihar" class="ng-binding">Harihar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hassan" class="ng-binding">Hassan</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Haveri" class="ng-binding">Haveri</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hebbal" class="ng-binding">Hebbal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Heggadadevankote" class="ng-binding">Heggadadevankote</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hirekerur" class="ng-binding">Hirekerur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hiriyur" class="ng-binding">Hiriyur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Holalkere" class="ng-binding">Holalkere</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Holenarasipur" class="ng-binding">Holenarasipur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Homnabad" class="ng-binding">Homnabad</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Honnali" class="ng-binding">Honnali</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hosadurga" class="ng-binding">Hosadurga</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hosakote" class="ng-binding">Hosakote</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hubli-Dharwad-Central" class="ng-binding">Hubli-Dharwad-Central</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hubli-Dharwad-East" class="ng-binding">Hubli-Dharwad-East</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Chamaraja" class="ng-binding">Chamaraja</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hubli-Dharwad-West" class="ng-binding">Hubli-Dharwad-West</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hukkeri" class="ng-binding">Hukkeri</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hungund" class="ng-binding">Hungund</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Hunsur" class="ng-binding">Hunsur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Indi" class="ng-binding">Indi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Jagalur" class="ng-binding">Jagalur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Jamkhandi" class="ng-binding">Jamkhandi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Jayanagar" class="ng-binding">Jayanagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Jevargi" class="ng-binding">Jevargi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/K.R. Pura" class="ng-binding">K.R. Pura</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kadur" class="ng-binding">Kadur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kagwad" class="ng-binding">Kagwad</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kalghatgi" class="ng-binding">Kalghatgi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kampli" class="ng-binding">Kampli</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kanakagiri" class="ng-binding">Kanakagiri</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kanakapura" class="ng-binding">Kanakapura</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kapu" class="ng-binding">Kapu</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Karkal" class="ng-binding">Karkal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Karwar" class="ng-binding">Karwar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Khanapur" class="ng-binding">Khanapur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kittur" class="ng-binding">Kittur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kolar" class="ng-binding">Kolar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kolar Gold Field" class="ng-binding">Kolar Gold Field</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kollegal" class="ng-binding">Kollegal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Koppal" class="ng-binding">Koppal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Koratagere" class="ng-binding">Koratagere</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Krishnaraja" class="ng-binding">Krishnaraja</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Krishnarajanagara" class="ng-binding">Krishnarajanagara</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Krishnarajpet" class="ng-binding">Krishnarajpet</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kudachi" class="ng-binding">Kudachi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kudligi" class="ng-binding">Kudligi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kumta" class="ng-binding">Kumta</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kundapura" class="ng-binding">Kundapura</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kundgol" class="ng-binding">Kundgol</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kunigal" class="ng-binding">Kunigal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Kushtagi" class="ng-binding">Kushtagi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Lingsugur" class="ng-binding">Lingsugur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Maddur" class="ng-binding">Maddur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Madhugiri" class="ng-binding">Madhugiri</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Madikeri" class="ng-binding">Madikeri</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Magadi" class="ng-binding">Magadi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Mahadevapura" class="ng-binding">Mahadevapura</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Mahalakshmi Layout" class="ng-binding">Mahalakshmi Layout</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Malavalli" class="ng-binding">Malavalli</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Malleshwaram" class="ng-binding">Malleshwaram</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Malur" class="ng-binding">Malur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Mandya" class="ng-binding">Mandya</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Mangalore" class="ng-binding">Mangalore</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Mangalore City North" class="ng-binding">Mangalore City North</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Mangalore City South" class="ng-binding">Mangalore City South</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Manvi" class="ng-binding">Manvi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Maski" class="ng-binding">Maski</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Mayakonda" class="ng-binding">Mayakonda</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Melukote" class="ng-binding">Melukote</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Molakalmuru" class="ng-binding">Molakalmuru</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Moodabidri" class="ng-binding">Moodabidri</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Muddebihal" class="ng-binding">Muddebihal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Mudhol" class="ng-binding">Mudhol</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Mudigere" class="ng-binding">Mudigere</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Mulbagal" class="ng-binding">Mulbagal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Nagamangala" class="ng-binding">Nagamangala</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Nagthan" class="ng-binding">Nagthan</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Nanjangudu" class="ng-binding">Nanjangudu</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Narasimharaja" class="ng-binding">Narasimharaja</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Nargund" class="ng-binding">Nargund</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Navalgund" class="ng-binding">Navalgund</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Nelamangala" class="ng-binding">Nelamangala</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Nippani" class="ng-binding">Nippani</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Padmanaba Nagar" class="ng-binding">Padmanaba Nagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Pavagada" class="ng-binding">Pavagada</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Piriyapatna" class="ng-binding">Piriyapatna</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Pulakeshinagar" class="ng-binding">Pulakeshinagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Puttur" class="ng-binding">Puttur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Raichur" class="ng-binding">Raichur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Raichur Rural" class="ng-binding">Raichur Rural</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Rajaji Nagar" class="ng-binding">Rajaji Nagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Rajarajeshwarinagar" class="ng-binding">Rajarajeshwarinagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Ramanagaram" class="ng-binding">Ramanagaram</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Ramdurg" class="ng-binding">Ramdurg</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Ranibennur" class="ng-binding">Ranibennur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Raybag" class="ng-binding">Raybag</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Ron" class="ng-binding">Ron</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Sagar" class="ng-binding">Sagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Sakleshpur" class="ng-binding">Sakleshpur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Sandur" class="ng-binding">Sandur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Sarvagnanagar" class="ng-binding">Sarvagnanagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Saundatti Yellamma" class="ng-binding">Saundatti Yellamma</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Sedam" class="ng-binding">Sedam</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Shahapur" class="ng-binding">Shahapur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Shanti Nagar" class="ng-binding">Shanti Nagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Shiggaon" class="ng-binding">Shiggaon</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Shimoga" class="ng-binding">Shimoga</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Shimoga Rural" class="ng-binding">Shimoga Rural</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Shirahatti" class="ng-binding">Shirahatti</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Shivajinagar" class="ng-binding">Shivajinagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Shorapur" class="ng-binding">Shorapur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Shravanabelagola" class="ng-binding">Shravanabelagola</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Shrirangapattana" class="ng-binding">Shrirangapattana</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Sidlaghatta" class="ng-binding">Sidlaghatta</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Sindgi" class="ng-binding">Sindgi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Sindhanur" class="ng-binding">Sindhanur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Sira" class="ng-binding">Sira</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Sirsi" class="ng-binding">Sirsi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Siruguppa" class="ng-binding">Siruguppa</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Sorab" class="ng-binding">Sorab</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Sringeri" class="ng-binding">Sringeri</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Srinivaspur" class="ng-binding">Srinivaspur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Sullia" class="ng-binding">Sullia</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/T.Narasipur" class="ng-binding">T.Narasipur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Tarikere" class="ng-binding">Tarikere</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Terdal" class="ng-binding">Terdal</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Tiptur" class="ng-binding">Tiptur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Tirthahalli" class="ng-binding">Tirthahalli</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Tumkur City" class="ng-binding">Tumkur City</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Tumkur Rural" class="ng-binding">Tumkur Rural</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Turuvekere" class="ng-binding">Turuvekere</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Udupi" class="ng-binding">Udupi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Varuna" class="ng-binding">Varuna</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Vijaynagar" class="ng-binding">Vijaynagar</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Vijayanagara" class="ng-binding">Vijayanagara</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Virajpet" class="ng-binding">Virajpet</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Yadgir" class="ng-binding">Yadgir</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Yelahanka" class="ng-binding">Yelahanka</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Yelburga" class="ng-binding">Yelburga</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Yellapur" class="ng-binding">Yellapur</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Yemkanmardi" class="ng-binding">Yemkanmardi</a>
+                  </div>
+                </div>
+        </li><li ng-repeat="datacandidate in constituencydata" class="span2 ng-scope">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/Yeshvanthapura" class="ng-binding">Yeshvanthapura</a>
+                  </div>
+                </div>
+        </li>
+   </ul>
+    </div>
+</div>
+
+</div>
+    <div loader="" class="center" ng-show="visible" style="display: none; "></div>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28874144-2']);
+        _gaq.push(['_setDomainName', 'india-elections.in']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+</script>
+   
+
+
+</body></html>

@@ -1,0 +1,24 @@
+﻿<div class="row-fluid" style="margin-top:10px;margin-bottom:10px;">
+    <ul class="breadcrumb" style="margin-top: 10px;">
+        <li class="active">Assembly Elections 2013<span class="divider">/</span></li>
+    </ul>
+</div>
+<div class="container-fluid">
+    <div class="span3">
+        Select State: 
+        <select ng-change="change()" ng-options="c.name for c in state" ng-model="selectedstate" class="ng-pristine ng-valid">
+        </select>
+    </div>
+    <div class="span9">
+        <ul style="margin-top:10px;" class="thumbnails ">
+       <li ng-repeat="datacandidate in constituencydata" class="span2">
+            <div class="well">
+                  <div class="caption" style="text-align:center">
+                    <a href="#!/contestingAssemblyCandidate/{{datacandidate.name}}" >{{datacandidate.name}}</a>
+                  </div>
+                </div>
+        </li>
+   </ul>
+    </div>
+</div>
+

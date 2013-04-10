@@ -1,0 +1,54 @@
+﻿> db.GeneralCandidate.find().pretty()
+{
+        "Biography" : "Born in a very humble background of a middle class family
+, he had an inclination for volunteering from a very young age. His formal induc
+tion in social service started as a â€˜Pracharakâ€™(organizer) of Rashtriya Sway
+amsevak Sangh (RSS), a socio-cultural organization, dedicated to the service of
+the nation. After serving in the RSS for about a decade and a half, he entered m
+ainstream politics in 1987 with joining the Bhartiya Janata Party (BJP), a natio
+nal leading political party of India. Owing to his excellent organizing capabili
+ties, he was designated on the level of General Secretary of the Gujarat unit wi
+thin a year. BJP was then a strong opposition party. Between 1988 and 1995, Namo
+ successfully carried out the necessary groundworkfor making â€˜Gujarat BJPâ€™ t
+he ruling party of the state and hence was recognized as a â€˜master strategistâ
+€™.",
+        "CandidateId" : 1111,
+        "ContenstingAssembly" : "Ahemdabad",
+        "HomeNo" : "123",
+        "ImgLocation" : "../IMG/modi.jpg",
+        "Name" : "Narendra Modi",
+        "OfficeHeld" : [
+                "GujaratCM"
+        ],
+        "OfficeNo" : "123",
+        "PartyLogo" : "../IMG/bjp1.jpg",
+        "_id" : ObjectId("5138ccee586a89b7f8d15c53"),
+        "facebookLink" : "",
+        "totalAsset" : 100000,
+        "twitterLink" : "",
+        "websiteLink" : ""
+}
+
+
+
+{
+        "AssemblyName" : "Bangalore South",
+        "Name" : "BS Yedurappa",
+        "ImgLocation" : "../IMG/yedurappa.jpg",
+        "PartyLogo" : "../IMG/SP.png",
+        "VoteCount" : 0,
+		"IsHeavyWeight":1,
+		"State":"Karnataka",
+        "CandidateId" : getNextSequence("userid"),
+		"Biography":"Born in a very humble background of a middle class family",
+		"OfficeHeld" : [
+                "GujaratCM"
+        ],
+        "OfficeNo" : "123",
+        "facebookLink" : "",
+        "totalAsset" : 100000,
+        "twitterLink" : "",
+        "websiteLink" : "",
+		"HomeNo" : "123",
+        
+}

@@ -1,0 +1,131 @@
+<html ng-app="testdirectivemodule" class="ng-scope"><head>
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="IndiaElections">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://india-elections.in/">
+    <meta name="description" content="India-Election provides info on assembly elections 2013 and general elections 2014.We also provide exit poll data from various assembly elections and list of contesting candidates">
+    <meta name="keywords" content="assembly elections 2013,Recent Election Updates,Recent Political Tweets ,General Elections 2014 ,karnataka assembly elections schedule,karnataka contesting candidates,exit poll karnataka,list of constituencies ,party candidates,exit polls loksabha ,contesting candidates from constituencies">
+    <title>IndiaElections</title>
+    <link rel="stylesheet" href="../../stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="../../stylesheets/DOC.css">
+    <link rel="stylesheet" href="../../stylesheets/bootstrap-responsive.css">
+<style type="text/css">@@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style></head>
+<body data-status="ready">
+    <div class="navbar navbar-fixed-top ">
+        <div class="navbar-inner">
+            <div class="container">
+                <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar collapsed" type="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="" class="brand" style="padding-top: 6px; padding-bottom: 0px;">
+                    <img src="../../IMG/mainlogo.png">
+                </a>
+                <div class="nav-collapse">
+                    <ul class="nav" id="navbar">
+                        <li ng-class="{active:section=='plunks'}" class="active"><a href="/"><i class="icon-home"></i>Home</a></li>
+                        <li><a href="#!/api/generalelections/"><i class="icon-calendar"></i>General Election 2014</a></li>
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <i class="icon-eye-open"></i>Assembly Elections
+                        <b class="caret"></b>
+                        </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#!/api/assemblyelections/Karnataka">Assembly Elections 2013</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="#!/api/ConstituencyAssembly"><i class="icon-th"></i>Constituecy</a></li>
+                        <li ng-class="{active:section=='discuss'}"><a href="#!/api/politicalPartyAssembly"><i class="icon-time"></i>Party Candidates</a></li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="#!/api/ExitLokSabha">
+                            <i class="icon-facetime-video"></i>ExitPolls</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-view="" class="container-fluid" style="margin-top: 40px;"><div class="container ng-scope" style="margin-top:20px;">
+   
+    <div class="row-fluid">
+        <div class="span4 rounderCorner">
+            <div class="row-fluid">
+            <button class="btn" type="button"><i class="icon-align-left"></i></button>
+                <span class="label label-info">Recent Updates</span>
+             </div>
+           <div class="row-fluid">
+                <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;">BJP releases first list of 144 candidates for Karnataka polls</span></h6> 
+                <span class="news">April 5, 2013</span>
+            </div>
+            <div class="row-fluid">
+                <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;">Congress releases first list of 177 candidates for Karnataka polls</span></h6> 
+                <span class="news">April 5, 2013</span>
+            </div>
+            <div class="row-fluid">
+                <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;">Karnataka polls: JDS announces first list of candidates</span></h6> 
+                <span class="news">April 5, 2013</span>
+            </div>
+            <div class="row-fluid">
+                <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;">JDS to release Karnataka polls candidate list by March end</span></h6> 
+                <span class="news">March 23, 2013</span>
+            </div>
+            <div class="row-fluid">
+                <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;">Prahlad Joshi appointed Karnataka BJP president</span></h6> 
+                <span class="news">March 21, 2013</span>
+            </div>
+            <div class="row-fluid">
+                <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;">Parties short-list candidates for upcoming Karnataka Assembly poll</span></h6> 
+                <span class="news">March 20, 2013</span>
+            </div>
+            <div class="row-fluid">
+               <h6 style="margin-top:2px ;margin-bottom:2px;"><a target="_self" href="http://eci.nic.in/eci_main1/current/PN_20032013.pdf">Schedule for the General Elections to the Legislative Assembly of Karnataka – Regarding.</a></h6> 
+                <span class="news">March 18, 2013</span>
+            </div>
+       </div>
+       
+        <div class="span4 offset2  rounderCorner">
+            <div class="row-fluid">
+            <button class="btn" type="button"><i class="icon-align-left"></i></button>
+                <span class="label label-inverse">Recent Tweets</span>
+             </div>
+            <!-- ngRepeat: data in twitterdata --><div class="row-fluid ng-scope" ng-repeat="data in twitterdata">
+               <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;" class="ng-binding">Bengal is a great land &amp;amp; has a lot of potential. Without it's strength, India's development won't be complete http://t.co/i093EAjhVI</span></h6> 
+                <span class="news ng-binding">Narendra Modi :Tue Apr 09 08:52:38 +0000 2013</span>
+            </div><div class="row-fluid ng-scope" ng-repeat="data in twitterdata">
+               <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;" class="ng-binding">India is the most youthful country. If we make use of our demographic dividend, we can achieve Swami Vivekananda's dream of glorious India!</span></h6> 
+                <span class="news ng-binding">Narendra Modi :Tue Apr 09 08:50:45 +0000 2013</span>
+            </div><div class="row-fluid ng-scope" ng-repeat="data in twitterdata">
+               <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;" class="ng-binding">The poor condition of the country is due to the UPA Government at Centre. What is lacking is governance, not budget or ideas.</span></h6> 
+                <span class="news ng-binding">Narendra Modi :Tue Apr 09 08:49:20 +0000 2013</span>
+            </div><div class="row-fluid ng-scope" ng-repeat="data in twitterdata">
+               <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;" class="ng-binding">In Guj it took a decade to fill ditches of Congress Govts. In Bengal, it will take time to fill severe dents created for over 3 decades.</span></h6> 
+                <span class="news ng-binding">Narendra Modi :Tue Apr 09 08:48:06 +0000 2013</span>
+            </div><div class="row-fluid ng-scope" ng-repeat="data in twitterdata">
+               <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;" class="ng-binding">Shared my views on Vibrant Growth Model with Chambers of Commerce &amp;amp; Industry in Kolkata http://t.co/i093EAjhVI</span></h6> 
+                <span class="news ng-binding">Narendra Modi :Tue Apr 09 08:46:59 +0000 2013</span>
+            </div>
+       </div>
+         
+ </div>
+   </div>
+    </div>
+    <div loader="" class="center" ng-show="visible" style="display: none; "></div>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28874144-2']);
+        _gaq.push(['_setDomainName', 'india-elections.in']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+</script>
+   
+
+
+</body></html>

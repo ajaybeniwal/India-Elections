@@ -1,0 +1,267 @@
+<html ng-app="testdirectivemodule" class="ng-scope"><head>
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="IndiaElections">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://india-elections.in/">
+    <meta name="description" content="India-Election provides info on assembly elections 2013 and general elections 2014.We also provide exit poll data from various assembly elections and list of contesting candidates">
+    <meta name="keywords" content="assembly elections 2013,Recent Election Updates,Recent Political Tweets ,General Elections 2014 ,karnataka assembly elections schedule,karnataka contesting candidates,exit poll karnataka,list of constituencies ,party candidates,exit polls loksabha ,contesting candidates from constituencies">
+    <title>IndiaElections</title>
+    <link rel="stylesheet" href="../../stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="../../stylesheets/DOC.css">
+    <link rel="stylesheet" href="../../stylesheets/bootstrap-responsive.css">
+<style type="text/css">@@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style></head>
+<body data-status="ready">
+    <div class="navbar navbar-fixed-top ">
+        <div class="navbar-inner">
+            <div class="container">
+                <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar collapsed" type="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="" class="brand" style="padding-top: 6px; padding-bottom: 0px;">
+                    <img src="../../IMG/mainlogo.png">
+                </a>
+                <div class="nav-collapse">
+                    <ul class="nav" id="navbar">
+                        <li ng-class="{active:section=='plunks'}" class="active"><a href="/"><i class="icon-home"></i>Home</a></li>
+                        <li><a href="#!/api/generalelections/"><i class="icon-calendar"></i>General Election 2014</a></li>
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <i class="icon-eye-open"></i>Assembly Elections
+                        <b class="caret"></b>
+                        </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#!/api/assemblyelections/Karnataka">Assembly Elections 2013</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="#!/api/ConstituencyAssembly"><i class="icon-th"></i>Constituecy</a></li>
+                        <li ng-class="{active:section=='discuss'}"><a href="#!/api/politicalPartyAssembly"><i class="icon-time"></i>Party Candidates</a></li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="#!/api/ExitLokSabha">
+                            <i class="icon-facetime-video"></i>ExitPolls</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-view="" class="container-fluid" style="margin-top: 40px;"><div class="row-fluid ng-scope">
+    <ul class="breadcrumb" style="margin-top: 10px;">
+        <li><a href="#!/api/ExitLokSabha">General Elections 2014</a> <span class="divider">/</span></li>
+        <li class="active">Assembly Elections 2013 <span class="divider">/</span></li>
+    </ul>
+</div>
+<div class="container-fluid ng-scope" style="margin-top:10px;">
+  <div class="span2">
+            Select State: 
+        <select ng-model="selectedstate" ng-options="c.name for c in state" ng-change="change()" class="ng-pristine ng-valid"><option value="0" selected="selected">Karnataka</option></select>
+    </div>
+    <div class="span10"><!-- ngRepeat: exitpoll in exitpolldata --><div class="span2 rounderCorner ng-scope" ng-repeat="exitpoll in exitpolldata">
+            <div class="row-fluid">
+            <button class="btn" type="button"><i class="icon-align-left"></i></button>
+                <span class="label ng-binding label-important" ng-class="{true:'label-important', false:'label-success'}[$index%2==0]">ZEE</span>
+             </div>
+            <div class="row-fluid">
+                <table class="table table-bordered table-condensed" style="margin-top:5px;">
+                 <tbody>
+                <!-- ngRepeat: politicaldata in exitpoll.PartyList --><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/JDS.jpg" style="width:32px;height:28px;" src="../IMG/JDS.jpg"> <a href="" class="ng-binding">JD(S)</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/INCTHUMB.png" style="width:32px;height:28px;" src="../IMG/INCTHUMB.png"> <a href="" class="ng-binding">INC</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/BJPThumb.jpg" style="width:32px;height:28px;" src="../IMG/BJPThumb.jpg"> <a href="" class="ng-binding">BJP</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/Ind.png" style="width:32px;height:28px;" src="../IMG/Ind.png"> <a href="" class="ng-binding">Others</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr>
+            </tbody></table>
+             </div>
+       </div><div class="span2 rounderCorner ng-scope" ng-repeat="exitpoll in exitpolldata">
+            <div class="row-fluid">
+            <button class="btn" type="button"><i class="icon-align-left"></i></button>
+                <span class="label ng-binding label-success" ng-class="{true:'label-important', false:'label-success'}[$index%2==0]">ABP News</span>
+             </div>
+            <div class="row-fluid">
+                <table class="table table-bordered table-condensed" style="margin-top:5px;">
+                 <tbody>
+                <!-- ngRepeat: politicaldata in exitpoll.PartyList --><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/JDS.jpg" style="width:32px;height:28px;" src="../IMG/JDS.jpg"> <a href="" class="ng-binding">JD(S)</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/INCTHUMB.png" style="width:32px;height:28px;" src="../IMG/INCTHUMB.png"> <a href="" class="ng-binding">INC</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/BJPThumb.jpg" style="width:32px;height:28px;" src="../IMG/BJPThumb.jpg"> <a href="" class="ng-binding">BJP</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/Ind.png" style="width:32px;height:28px;" src="../IMG/Ind.png"> <a href="" class="ng-binding">Others</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr>
+            </tbody></table>
+             </div>
+       </div><div class="span2 rounderCorner ng-scope" ng-repeat="exitpoll in exitpolldata">
+            <div class="row-fluid">
+            <button class="btn" type="button"><i class="icon-align-left"></i></button>
+                <span class="label ng-binding label-important" ng-class="{true:'label-important', false:'label-success'}[$index%2==0]">IBN-7</span>
+             </div>
+            <div class="row-fluid">
+                <table class="table table-bordered table-condensed" style="margin-top:5px;">
+                 <tbody>
+                <!-- ngRepeat: politicaldata in exitpoll.PartyList --><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/JDS.jpg" style="width:32px;height:28px;" src="../IMG/JDS.jpg"> <a href="" class="ng-binding">JD(S)</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/INCTHUMB.png" style="width:32px;height:28px;" src="../IMG/INCTHUMB.png"> <a href="" class="ng-binding">INC</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/BJPThumb.jpg" style="width:32px;height:28px;" src="../IMG/BJPThumb.jpg"> <a href="" class="ng-binding">BJP</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/Ind.png" style="width:32px;height:28px;" src="../IMG/Ind.png"> <a href="" class="ng-binding">Others</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr>
+            </tbody></table>
+             </div>
+       </div><div class="span2 rounderCorner ng-scope" ng-repeat="exitpoll in exitpolldata">
+            <div class="row-fluid">
+            <button class="btn" type="button"><i class="icon-align-left"></i></button>
+                <span class="label ng-binding label-success" ng-class="{true:'label-important', false:'label-success'}[$index%2==0]">Aaj Tak</span>
+             </div>
+            <div class="row-fluid">
+                <table class="table table-bordered table-condensed" style="margin-top:5px;">
+                 <tbody>
+                <!-- ngRepeat: politicaldata in exitpoll.PartyList --><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/JDS.jpg" style="width:32px;height:28px;" src="../IMG/JDS.jpg"> <a href="" class="ng-binding">JD(S)</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/INCTHUMB.png" style="width:32px;height:28px;" src="../IMG/INCTHUMB.png"> <a href="" class="ng-binding">INC</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/BJPThumb.jpg" style="width:32px;height:28px;" src="../IMG/BJPThumb.jpg"> <a href="" class="ng-binding">BJP</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/Ind.png" style="width:32px;height:28px;" src="../IMG/Ind.png"> <a href="" class="ng-binding">Others</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr>
+            </tbody></table>
+             </div>
+       </div><div class="span2 rounderCorner ng-scope" ng-repeat="exitpoll in exitpolldata">
+            <div class="row-fluid">
+            <button class="btn" type="button"><i class="icon-align-left"></i></button>
+                <span class="label ng-binding label-important" ng-class="{true:'label-important', false:'label-success'}[$index%2==0]">India TV</span>
+             </div>
+            <div class="row-fluid">
+                <table class="table table-bordered table-condensed" style="margin-top:5px;">
+                 <tbody>
+                <!-- ngRepeat: politicaldata in exitpoll.PartyList --><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/JDS.jpg" style="width:32px;height:28px;" src="../IMG/JDS.jpg"> <a href="" class="ng-binding">JD(S)</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/INCTHUMB.png" style="width:32px;height:28px;" src="../IMG/INCTHUMB.png"> <a href="" class="ng-binding">INC</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/BJPThumb.jpg" style="width:32px;height:28px;" src="../IMG/BJPThumb.jpg"> <a href="" class="ng-binding">BJP</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/Ind.png" style="width:32px;height:28px;" src="../IMG/Ind.png"> <a href="" class="ng-binding">Others</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr>
+            </tbody></table>
+             </div>
+       </div><div class="span2 rounderCorner ng-scope" ng-repeat="exitpoll in exitpolldata">
+            <div class="row-fluid">
+            <button class="btn" type="button"><i class="icon-align-left"></i></button>
+                <span class="label ng-binding label-success" ng-class="{true:'label-important', false:'label-success'}[$index%2==0]">TV9 Karnataka</span>
+             </div>
+            <div class="row-fluid">
+                <table class="table table-bordered table-condensed" style="margin-top:5px;">
+                 <tbody>
+                <!-- ngRepeat: politicaldata in exitpoll.PartyList --><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/JDS.jpg" style="width:32px;height:28px;" src="../IMG/JDS.jpg"> <a href="" class="ng-binding">JD(S)</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/INCTHUMB.png" style="width:32px;height:28px;" src="../IMG/INCTHUMB.png"> <a href="" class="ng-binding">INC</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/BJPThumb.jpg" style="width:32px;height:28px;" src="../IMG/BJPThumb.jpg"> <a href="" class="ng-binding">BJP</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/Ind.png" style="width:32px;height:28px;" src="../IMG/Ind.png"> <a href="" class="ng-binding">Others</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr>
+            </tbody></table>
+             </div>
+       </div><div class="span2 rounderCorner ng-scope" ng-repeat="exitpoll in exitpolldata">
+            <div class="row-fluid">
+            <button class="btn" type="button"><i class="icon-align-left"></i></button>
+                <span class="label ng-binding label-important" ng-class="{true:'label-important', false:'label-success'}[$index%2==0]">NDTV India</span>
+             </div>
+            <div class="row-fluid">
+                <table class="table table-bordered table-condensed" style="margin-top:5px;">
+                 <tbody>
+                <!-- ngRepeat: politicaldata in exitpoll.PartyList --><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/JDS.jpg" style="width:32px;height:28px;" src="../IMG/JDS.jpg"> <a href="" class="ng-binding">JD(S)</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/INCTHUMB.png" style="width:32px;height:28px;" src="../IMG/INCTHUMB.png"> <a href="" class="ng-binding">INC</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/BJPThumb.jpg" style="width:32px;height:28px;" src="../IMG/BJPThumb.jpg"> <a href="" class="ng-binding">BJP</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/Ind.png" style="width:32px;height:28px;" src="../IMG/Ind.png"> <a href="" class="ng-binding">Others</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr>
+            </tbody></table>
+             </div>
+       </div><div class="span2 rounderCorner ng-scope" ng-repeat="exitpoll in exitpolldata">
+            <div class="row-fluid">
+            <button class="btn" type="button"><i class="icon-align-left"></i></button>
+                <span class="label ng-binding label-success" ng-class="{true:'label-important', false:'label-success'}[$index%2==0]">India News</span>
+             </div>
+            <div class="row-fluid">
+                <table class="table table-bordered table-condensed" style="margin-top:5px;">
+                 <tbody>
+                <!-- ngRepeat: politicaldata in exitpoll.PartyList --><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/JDS.jpg" style="width:32px;height:28px;" src="../IMG/JDS.jpg"> <a href="" class="ng-binding">JD(S)</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/INCTHUMB.png" style="width:32px;height:28px;" src="../IMG/INCTHUMB.png"> <a href="" class="ng-binding">INC</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/BJPThumb.jpg" style="width:32px;height:28px;" src="../IMG/BJPThumb.jpg"> <a href="" class="ng-binding">BJP</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr><tr ng-repeat="politicaldata in exitpoll.PartyList" class="ng-scope">
+                <td><img ng-src="../IMG/Ind.png" style="width:32px;height:28px;" src="../IMG/Ind.png"> <a href="" class="ng-binding">Others</a></td>
+                <td><span class="badge ng-binding">0</span> </td>
+                 </tr>
+            </tbody></table>
+             </div>
+       </div>
+    </div>
+
+    </div>
+
+    </div>
+    <div loader="" class="center" ng-show="visible" style="display: none; "></div>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28874144-2']);
+        _gaq.push(['_setDomainName', 'india-elections.in']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+</script>
+   
+
+</body></html>

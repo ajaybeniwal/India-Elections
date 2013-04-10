@@ -1,0 +1,90 @@
+﻿<div class="container" style="margin-top:15px;">
+    <div class="row-fluid">
+        <div class="span7">
+            <div class="span3">
+            <div class="thumbnail">
+                <img alt="300x200"  style="width: 160px; height: 160px;" ng-src={{ImgLocation}}>
+                <div class="caption" style="text-align:center">
+                    <h5 style="color:#1C2A47;">{{Name}}</h5>
+                    <ul class="meta" style="margin-left:0px;">
+                          <li class="editleft">
+                              <a>
+                                  <img ng-src={{PartyLogo}}>
+                              </a>
+                          </li>
+                          <li class="edit">
+                              <a title="click here to vote1"  href="" ng-click="upvote(CandidateId)" >
+                                 <i class="icon-thumbs-up"></i>
+                                  <span>{{VoteCount}}</span>
+                                </a> 
+                          </li>
+                          <li class="edit">
+                              <a title="Edit this plunk"  href="#">
+                                 <i class="icon-edit"></i>
+                                </a>
+                          </li>
+                          
+                      </ul>
+                  </div>
+                </div>
+              </div>
+            
+    <div class="span6 offset1">
+       <table class="table table-bordered table-striped">
+            <tbody>
+            <tr>
+                <td><span>Home No:</span></td>
+                <td><i class="icon-home"></i> {{HomeNo}}</td>
+            </tr>
+            <tr>
+                <td><span>Office No:</span></td>
+                <td><i class="icon-headphones"></i> {{OfficeNo}}</td>
+            </tr>
+           
+            <tr>
+                <td><span>Total Assets:</span></td>
+                <td><i class="icon-retweet"></i> <a href="">{{totalAsset}}</a></td>
+            </tr>
+             <tr>
+                <td><span>Website:</span></td>
+                <td><i class="icon-retweet"></i> <a href="">{{websiteLink}}</a></td>
+            </tr>
+                <tr>
+                <td><span>Facebook:</span></td>
+                <td><i class="icon-retweet"></i> <a href="">{{facebookLink}}</a></td>
+            </tr>
+                 <tr>
+                <td><span>Twitter:</span></td>
+                <td><i class="icon-retweet"></i> <a href="">{{twitterLink}}</a></td>
+            </tr>
+
+        </tbody></table>
+       <section id="ttypography">
+            <div class="bs-docs-example">
+                <span class="label label-inverse" ng-repeat="data in OfficeHeld">{{data}}</span>
+                
+          </div>
+
+        </section>
+        
+
+        
+    
+</div>
+
+        </div>
+
+      <div class="span5">
+        <div class="well" id="reports">
+            <h6 class="modal-header"><a class="guide-module-toggle-icon pull-left">
+                </a><span style="margin-left:10px;" class="label label-inverse ng-binding">BioGraphy</span></h6>
+           <div class="text_exposed_root text_exposed" id="id_511c6a011ab2e7204400049">{{Biography}}</div>
+        <ul class="nav nav-list"></ul></div>
+          <div class="well" id="Div1">
+            <h6 class="modal-header"><a class="guide-module-toggle-icon pull-left">
+                </a><span style="margin-left:10px;" class="label label-inverse ng-binding">Appeal</span></h6>
+           <div class="text_exposed_root text_exposed" id="Div2">Please Vote For Me</div>
+        <ul class="nav nav-list"></ul></div>
+    </div>
+    </div>
+</div>

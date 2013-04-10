@@ -1,0 +1,21 @@
+﻿{
+        "_id" : ObjectId("512e58ba586a89b7f8d15c3b"),
+        "ChannelName" : "ABP",
+        "PartyList" : [
+                {
+                        "Symbol" : "../IMG/thumb64.jpg",
+                        "ProjectedSeats" : "7-10",
+                        "PartyName" : "INLD"
+                },
+                {
+                        "Symbol" : "../IMG/INCTHUMB.png",
+                        "ProjectedSeats" : "100-110",
+                        "PartyName" : "INC"
+                },
+                {
+                        "Symbol" : "../IMG/bjp1.jpg",
+                        "ProjectedSeats" : "140-150",
+                        "PartyName" : "BJP"
+                }
+        ]
+}

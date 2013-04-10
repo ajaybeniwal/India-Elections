@@ -1,0 +1,43 @@
+﻿{
+        "AssemblyName" : "Nanjangudu",
+        "Name" : "Dr Shivaram",
+        "ImgLocation" : "../IMG/NoImage.jpg",
+        "PartyLogo" : "../IMG/BJPThumb.jpg",
+        "VoteCount" : 0,
+		"IsHeavyWeight":1,
+		"State":"Karnataka",
+        "CandidateId" : getNextSequence("userid"),
+		"Biography":"",
+		"OfficeHeld" : [
+        ],
+        "OfficeNo" : "",
+        "facebookLink" : "",
+        "totalAsset" :"" ,
+        "twitterLink" : "",
+        "websiteLink" : "",
+		"HomeNo" : "",
+        
+}
+
+
+
+function getNextSequence(name) {
+   var ret = db.counters.findAndModify(
+          {
+            query: { _id: name },
+            update: { $inc: { seq: 1 } },
+            new: true
+          }
+   );
+
+   return ret.seq;
+}
+
+// Counters Collection 
+
+ db.counters.insert(
+   {
+      _id: "userid",
+       seq: 0
+    }
+ )

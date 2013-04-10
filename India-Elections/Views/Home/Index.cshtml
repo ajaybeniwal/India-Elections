@@ -1,0 +1,78 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="testdirectivemodule">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta property="og:title" content="IndiaElections"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://india-elections.in/"/>
+    <meta name="description" content="India-Election provides info on assembly elections 2013 and general elections 2014.We also provide exit poll data from various assembly elections and list of contesting candidates" />
+    <meta name="keywords" content="assembly elections 2013,Recent Election Updates,Recent Political Tweets ,General Elections 2014 ,karnataka assembly elections schedule,karnataka contesting candidates,exit poll karnataka,list of constituencies ,party candidates,exit polls loksabha ,contesting candidates from constituencies" />
+    <title>IndiaElections</title>
+    <link rel="stylesheet" href="../../stylesheets/bootstrap.css" />
+    <link rel="stylesheet" href="../../stylesheets/DOC.css" />
+    <link rel="stylesheet" href="../../stylesheets/bootstrap-responsive.css" />
+</head>
+<body data-status="{{status}}">
+    <div class="navbar navbar-fixed-top ">
+        <div class="navbar-inner">
+            <div class="container">
+                <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar collapsed" type="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="" class="brand" style="padding-top: 6px; padding-bottom: 0px;">
+                    <img src="../../IMG/mainlogo.png">
+                </a>
+                <div class="nav-collapse">
+                    <ul class="nav" id="navbar">
+                        <li ng-class="{active:section=='plunks'}" class="active"><a href="/"><i class="icon-home"></i>Home</a></li>
+                        <li><a href="#!/api/generalelections/"><i class="icon-calendar"></i>General Election 2014</a></li>
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <i class="icon-eye-open"></i>Assembly Elections
+                        <b class="caret"></b>
+                        </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#!/api/assemblyelections/Karnataka">Assembly Elections 2013</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="#!/api/ConstituencyAssembly"><i class="icon-th"></i>Constituecy</a></li>
+                        <li ng-class="{active:section=='discuss'}"><a href="#!/api/politicalPartyAssembly"><i class="icon-time"></i>Party Candidates</a></li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="#!/api/ExitLokSabha">
+                            <i class="icon-facetime-video"></i>ExitPolls</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-view class="container-fluid" style="margin-top: 40px;"></div>
+    <div loader class="center" ng-show="visible"></div>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28874144-2']);
+        _gaq.push(['_setDomainName', 'india-elections.in']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+</script>
+    <script src="../../Scripts/jquery.js"></script>
+    <script src="../../Scripts/bootstrap-dropdown.js"></script>
+    <script src="../../Scripts/Collapse.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+    <script src="../../Scripts/App.js"></script>
+</body>
+</html>

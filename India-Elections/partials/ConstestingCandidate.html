@@ -1,0 +1,34 @@
+﻿<div  class="container-fluid" style="margin-top:10px;" >
+    <ul class="breadcrumb" style="margin-top: 10px;">
+        <li class="active">Contesting Candidates <span class="divider">/</span></li>
+    </ul>
+</div>
+<ul class="thumbnails" style="margin-top:10px;">
+        <li class="span2" ng-repeat="candidate in searchData">
+            <div class="thumbnail">
+                  <img alt="300x200"  style="width: 160px; height: 160px;" ng-src={{candidate.ImgLocation}}>
+                  <div class="caption" style="text-align:center">
+                    <span>{{candidate.Name}}</span>
+                      <ul class="meta" style="margin-left:0px;">
+                          <li class="editleft">
+                              <a>
+                                  <img ng-src={{candidate.PartyLogo}} />
+                              </a>
+                          </li>
+                          <li class="edit">
+                              <a title="Click Here to Vote" href=""  ng-click="upvote(candidate.CandidateId,$index)">
+                                 <i class="icon-thumbs-up"></i>
+                                  <span>{{candidate.VoteCount}}</span>
+                                </a> 
+                          </li>
+                          <li class="edit">
+                              <a title="Edit this plunk"  href="#">
+                                 <i class="icon-edit"></i>
+                                </a>
+                          </li>
+                          
+                      </ul>
+                  </div>
+                </div>
+        </li>
+    </ul>

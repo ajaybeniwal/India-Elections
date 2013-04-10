@@ -1,0 +1,14 @@
+﻿{
+        "_id" : ObjectId("5134e032586a89b7f8d15c43"),
+        "Phase" : "Phase-I",
+        "States" : [
+                "Gujarat",
+                "Haryana",
+                "Punjab"
+        ],
+        "IssueofNotification" : "17-11-2012",
+        "LastDateofMakingNotification" : "24-11-2012",
+        "Lastdateofwithdrawl" : "28-11-2012",
+        "dateofpoll" : "13-12-2012",
+        "couting" : "20-12-2012"
+}
