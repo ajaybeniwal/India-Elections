@@ -6,33 +6,9 @@
             <button class="btn" type="button"><i class="icon-align-left"></i></button>
                 <span class="label label-info">Recent Updates</span>
              </div>
-           <div class="row-fluid">
-                <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;">BJP releases first list of 144 candidates for Karnataka polls</span></h6> 
-                <span class="news">April 5, 2013</span>
-            </div>
-            <div class="row-fluid">
-                <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;">Congress releases first list of 177 candidates for Karnataka polls</span></h6> 
-                <span class="news">April 5, 2013</span>
-            </div>
-            <div class="row-fluid">
-                <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;">Karnataka polls: JDS announces first list of candidates</span></h6> 
-                <span class="news">April 5, 2013</span>
-            </div>
-            <div class="row-fluid">
-                <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;">JDS to release Karnataka polls candidate list by March end</span></h6> 
-                <span class="news">March 23, 2013</span>
-            </div>
-            <div class="row-fluid">
-                <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;">Prahlad Joshi appointed Karnataka BJP president</span></h6> 
-                <span class="news">March 21, 2013</span>
-            </div>
-            <div class="row-fluid">
-                <h6 style="margin-top:2px ;margin-bottom:2px;"><span style="color:#0088CC;">Parties short-list candidates for upcoming Karnataka Assembly poll</span></h6> 
-                <span class="news">March 20, 2013</span>
-            </div>
-            <div class="row-fluid" >
-               <h6 style="margin-top:2px ;margin-bottom:2px;"><a target="_self" href="http://eci.nic.in/eci_main1/current/PN_20032013.pdf">Schedule for the General Elections to the Legislative Assembly of Karnataka – Regarding.</a></h6> 
-                <span class="news">March 18, 2013</span>
+           <div class="row-fluid" ng-repeat="data in eventData">
+                <h6 style="margin-top:2px ;margin-bottom:2px;"><a href="{{data.EventLink}}">{{data.EventDesc}}</a></h6> 
+                <span class="news">{{data.EventDateTime}}</span>
             </div>
        </div>
        

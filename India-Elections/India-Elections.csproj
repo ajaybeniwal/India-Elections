@@ -108,6 +108,7 @@
     <Content Include="IMG\NoImage.jpg" />
     <Content Include="IMG\parameshwra.jpg" />
     <Content Include="IMG\Shivaram.jpg" />
+    <Content Include="partials\RallySchedule.html" />
     <Content Include="PublicContent\AssemblyCandidateList.json" />
     <Content Include="PublicContent\AssemblyParty.json" />
     <Content Include="PublicContent\ExitPollAssemblyState.json" />
@@ -214,6 +215,7 @@
     <Content Include="partials\PoliticalPartyAssembly.html" />
     <Content Include="partials\Schedule.html" />
     <Content Include="partials\ScheduleAssembly.html" />
+    <Content Include="PublicContent\TextFile1.txt" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\bootstrap-dropdown.js" />
     <Content Include="Scripts\Collapse.js" />

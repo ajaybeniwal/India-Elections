@@ -42,7 +42,7 @@ App.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     $routeProvider.when('/candidateAssembly', { templateUrl: '/partials/CandidateAssembly.html', controller: candidatecontroller });
     $routeProvider.when('/api/Schedule', { templateUrl: '/partials/Schedule.html', controller: loksabhaschedulecontroller, resolve: loksabhaschedulecontroller.resolve });
     $routeProvider.when('/api/ScheduleAssembly/:id', { templateUrl: '/partials/ScheduleAssembly.html', controller: assemblyschedulecontroller, resolve: assemblyschedulecontroller.resolve });
-    $routeProvider.when('/Popular', { templateUrl: '/partials/Popular.html' });
+    $routeProvider.when('/api/RallySchedule', { templateUrl: '/partials/RallySchedule.html', controller: rallycontroller });
     $routeProvider.when('/api/ExitPoll', {
         templateUrl: '/partials/ExitPoll.html', controller: exitpollController, resolve: {
             responseData: ['$http', function ($http) {
@@ -108,6 +108,11 @@ App.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 }]);
 
 
+function rallycontroller($scope, $http, $rootScope) {
+    $rootScope.status = 'ready';
+}
+
+
 function constituencydetailcontroller($scope, $http, $routeParams) {
     $scope.currvalue = $routeParams.id;
 }
@@ -131,8 +136,9 @@ assemblyschedulecontroller.resolve = {
 
 
 
-function indexcontroller($scope, $http,$rootScope,tweetilist) {
+function indexcontroller($scope, $http, $rootScope, tweetilist, eventsList, $routeParams) {
     $scope.twitterdata = tweetilist.data;
+    $scope.eventData = eventsList.data;
     $rootScope.status = 'ready';
 }
 
@@ -140,6 +146,12 @@ indexcontroller.resolve = {
     tweetilist: function ($http, $route) {
         var url = "https://api.twitter.com/1/statuses/user_timeline/narendramodi.json?callback=JSON_CALLBACK&count=5"
         return $http.jsonp(url);
+    },
+    eventsList: function ($http, $route) {
+        return $http({
+            method: 'GET',
+            url: 'https://api.mongolab.com/api/1/databases/benisoftlabs/collections/Events?apiKey=50920bb9e4b010d72c561d8a'
+        });
     }
 }
 
@@ -633,7 +645,7 @@ function ($scope, $http, responseData, $rootScope) {
 
 }];
 
-var generalController = ['$scope', '$http', 'responseData', '$rootScope', function ($scope, $http, responseData, $rootScope) {
+var generalController = ['$scope', '$http', 'responseData', '$rootScope', '$route', function ($scope, $http, responseData, $rootScope, $route) {
     $scope.constituency = responseData.data;
     $scope.query = '';
     $rootScope.visible = false;

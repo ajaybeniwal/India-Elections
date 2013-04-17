@@ -1,31 +1,36 @@
-﻿{
-        "AssemblyName" : "Nanjangudu",
-        "Name" : "Dr Shivaram",
-        "ImgLocation" : "../IMG/NoImage.jpg",
-        "PartyLogo" : "../IMG/BJPThumb.jpg",
-        "VoteCount" : 0,
-		"IsHeavyWeight":1,
-		"State":"Karnataka",
-        "CandidateId" : getNextSequence("userid"),
-		"Biography":"",
-		"OfficeHeld" : [
-        ],
-        "OfficeNo" : "",
-        "facebookLink" : "",
-        "totalAsset" :"" ,
-        "twitterLink" : "",
-        "websiteLink" : "",
-		"HomeNo" : "",
-        
-}
+﻿	db.AssemblyCandidate.insert({
+	"AssemblyName" : "T.Narasipur",
+	"Name" : "Sundareshan",
+	"ImgLocation" : "../IMG/NoImage.jpg",
+	"PartyLogo" : "../IMG/JDS.jpg",
+	"VoteCount" : 0,
+	"IsHeavyWeight":0,
+	"State":"Karnataka",
+	"CandidateId" : 525,
+	"Biography":"",
+	"OfficeHeld" : [
+	],
+	"OfficeNo" : "",
+	"facebookLink" : "",
+	"totalAsset" :"" ,
+	"twitterLink" : "",
+	"websiteLink" : "",
+	"HomeNo" : ""
+	})
 
 
+
+/Assembly party candidates
+
+db.AssemblyPartyCandidates.insert({  "PartyName" : "JD(S)" ,
+ "State" : "Karnataka" , "Name" : "Sundareshan" , 
+ "ContenstingAssembly" : "T.Narasipur"})
 
 function getNextSequence(name) {
    var ret = db.counters.findAndModify(
           {
             query: { _id: name },
-            update: { $inc: { seq: 1 } },
+            update: { $inc: { seq: 1 } },						  p
             new: true
           }
    );
@@ -41,3 +46,6 @@ function getNextSequence(name) {
        seq: 0
     }
  )
+
+
+ db.AssemblyCandidate.update({"CandidateId":39},{$set:{IsHeavyWeight:1}})

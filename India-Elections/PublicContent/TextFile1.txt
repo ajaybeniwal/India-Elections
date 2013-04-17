@@ -1,0 +1,9 @@
+﻿Events 
+
+{
+EventId:"1",
+EventDesc:"BJP releases first list of 144 candidates for Karnataka polls",
+EventLink:"#!/Events/1",
+EventDateTime:"April 5, 2013",
+EventCompleteDesc:""
+}
