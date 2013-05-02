@@ -108,6 +108,7 @@
     <Content Include="IMG\NoImage.jpg" />
     <Content Include="IMG\parameshwra.jpg" />
     <Content Include="IMG\Shivaram.jpg" />
+    <Content Include="partials\RallyDetail.html" />
     <Content Include="partials\RallySchedule.html" />
     <Content Include="PublicContent\AssemblyCandidateList.json" />
     <Content Include="PublicContent\AssemblyParty.json" />
@@ -120,6 +121,7 @@
     <Content Include="PublicContent\LokSabhaParty.json" />
     <Content Include="PublicContent\Schedule.json" />
     <Content Include="PublicContent\ScheduleAssembly.json" />
+    <Content Include="PublicContent\Rally.txt" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="IMG\1349869208-GITANJALI-2_mini.jpg" />
     <Content Include="IMG\1349939865-Upto66Offer_mini.jpg" />

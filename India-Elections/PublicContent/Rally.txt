@@ -1,0 +1,27 @@
+﻿{"Month":"April","Date":"17"}
+
+RallyDetail
+{"Venue":"ABC","State":"Karnataka",
+"Time":"10:00-11:20","Description":"Karnataka elections"
+,"Date":"12","Candidate":"Narendra Modi",
+"Month":"April"}
+
+
+Rally 
+
+{
+        "_id" : ObjectId("517ba03a99b6b542fbc48b59"),
+        "CandidateName" : "Narendra Modi",
+        "Month" : "April",
+        "Dates" : [
+                "12",
+                "13",
+                "14"
+        ]
+}
+
+url: 'https://api.mongolab.com/api/1/databases/benisoftlabs/collections/AssemblySchedule?q={"Candidate":"Narendra Modi"}&apiKey=50920bb9e4b010d72c561d8a'
+
+
+
+	https://api.mongolab.com/api/1/databases/benisoftlabs/collections/RallyDetail?q={%22Candidate%22:%22Narendra%20Modi%22,%22Month%22:%22April%22,%22Date%22:12}&apiKey=50920bb9e4b010d72c561d8a

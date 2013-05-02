@@ -546,17 +546,30 @@ h2 small {
     text-align: center;
 }
 
-.statescontainer {
+    .statescontainer {
     width: 100%;
     list-style-type: none;
-}
+    }
 
     .statescontainer li {
-        float: left;
-        margin-left: 20px;
-        width: 300px;
-        background-color: #DCEAF4;
-        border-radius: 4px;
-        height: 50px;
-        margin-top: 20px;
+    float: left;
+    margin-left: 20px;
+    width: 300px;
+    background-color: #DCEAF4;
+    border-radius: 4px;
+    height: 50px;
+    margin-top: 20px;
     }
+
+    td.is-visible {
+    background-color: #DFF0D8 !important;
+    color: #468847;
+    }
+    .cell {
+        height:70px;
+        border: 1px solid #DDDDDD;
+    }
+
+        .cell:hover {
+            cursor:pointer;
+        }

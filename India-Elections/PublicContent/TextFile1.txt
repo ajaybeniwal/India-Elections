@@ -7,3 +7,13 @@ EventLink:"#!/Events/1",
 EventDateTime:"April 5, 2013",
 EventCompleteDesc:""
 }
+
+
+//Rally Events
+
+{CandidateName:"Narendra Modi",
+Month:"April",
+Dates:["12","13","14"]
+}
+
+https://api.mongolab.com/api/1/databases/benisoftlabs/collections/Rally?q={CandidateName:Narendra%20Modi}&apiKey=50920bb9e4b010d72c561d8a

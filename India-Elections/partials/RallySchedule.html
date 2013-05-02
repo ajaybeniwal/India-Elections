@@ -3,26 +3,24 @@
 
           <div class="span2">
             Select Candidate: 
-        <select>
-            <option>--Select Candidate--</option>
+      <select ng-model="candidatename" ng-options="c for c in candidates" >
+            <option value="">--Select Candidate--</option>
          </select>
     </div>
         <ul class="nav nav-pills pull-right">
-      <li class="active">
-        <a  href="">+ All Days</a>
+      <li ng-class="{true:'active', false:''}[selectedmonth == 'April']">
+        <a  href="" ng-click="selectedmonth='April'">+ April</a>
       </li>
-      <li >
-        <a  href="">+ Even Days</a>
+      <li ng-class="{true:'active', false:''}[selectedmonth == 'May']">
+        <a  href="" ng-click="selectedmonth='May'">+ May</a>
       </li>
-      <li >
-        <a  href="">+ Odd Days</a>
+      <li ng-class="{true:'active', false:''}[selectedmonth == 'June']">
+        <a  href="" ng-click="selectedmonth='June'">+ June</a>
       </li>
-      <li >
-        <a  href="">+ Weekends</a>
-      </li>
-      <li >
-        <a  href="">+ Weekdays</a>
+      <li ng-class="{true:'active', false:''}[selectedmonth == 'July']">
+        <a  href="" ng-click="selectedmonth='July'">+ July</a>
       </li>
     </ul>
     </div>
+     <div calendar candidatename="{{candidatename}}" selectedmonth="{{selectedmonth}}" class="row-fluid"></div>
  </div>

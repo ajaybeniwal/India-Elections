@@ -43,6 +43,7 @@ App.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     $routeProvider.when('/api/Schedule', { templateUrl: '/partials/Schedule.html', controller: loksabhaschedulecontroller, resolve: loksabhaschedulecontroller.resolve });
     $routeProvider.when('/api/ScheduleAssembly/:id', { templateUrl: '/partials/ScheduleAssembly.html', controller: assemblyschedulecontroller, resolve: assemblyschedulecontroller.resolve });
     $routeProvider.when('/api/RallySchedule', { templateUrl: '/partials/RallySchedule.html', controller: rallycontroller });
+    $routeProvider.when('/Rally/:date/:id/:month', { templateUrl: '/partials/RallyDetail.html', controller: rallydetailcontroller,resolve:rallydetailcontroller.resolve });
     $routeProvider.when('/api/ExitPoll', {
         templateUrl: '/partials/ExitPoll.html', controller: exitpollController, resolve: {
             responseData: ['$http', function ($http) {
@@ -109,9 +110,23 @@ App.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 
 
 function rallycontroller($scope, $http, $rootScope) {
+    $scope.candidates = ['Narendra Modi', 'Rahul Gandhi', 'Manmohan Singh'];
+    $scope.selectedmonth = 'April';
     $rootScope.status = 'ready';
 }
 
+function rallydetailcontroller($scope, rallydata) {
+    $scope.rallyData = rallydata.data;
+}
+
+rallydetailcontroller.resolve = {
+    rallydata: function ($http, $route) {
+        return $http({
+            method: 'GET',
+            url: 'https://api.mongolab.com/api/1/databases/benisoftlabs/collections/RallyDetail?q={"Candidate":"' + $route.current.params.id + '","Month":"' + $route.current.params.month + '","Date":"' + $route.current.params.date + '"}&apiKey=50920bb9e4b010d72c561d8a'
+        });
+    }
+}
 
 function constituencydetailcontroller($scope, $http, $routeParams) {
     $scope.currvalue = $routeParams.id;
@@ -808,6 +823,133 @@ App.directive('searchbox', function ($http) {
                 }
             });
 
+        }
+    }
+});
+
+
+App.directive('calendar', function ($http, $location, $rootScope) {
+    return {
+        restrict: 'A',
+        replace: true,
+        scope: { candidatename: '@candidatename', selectedmonth: '@selectedmonth' },
+        template: "<div ><table class='table table-bordered' style='border-collapse:collapse'><tr><th>\
+                 <span style='color:#0088CC;'>Sun</span></th><th><span style='color:#0088CC;'>Mon</span>\
+                 </th><th><span style='color:#0088CC;'>Tue</span></th>\
+                 <th><span style='color:#0088CC;'>Wed</span></th>\
+                <th><span style='color:#0088CC;'>Thu</span></th><th><span style='color:#0088CC;'>Fri</span>\
+                </th><th><span style='color:#0088CC;'>Sat</span></th></tr></table><div></div></div>",
+        link: function (scope, element, attrs) {
+            
+            jQuery(element).find('table').on('click', 'tr td', function (event) {
+                var dateText = jQuery(this).text();
+                var url = "/Rally/" + dateText + "/" + scope.candidatename + "/" + scope.selectedmonth;
+                $location.path(url);
+                scope.$apply();
+
+            })
+
+            attrs.$observe('candidatename', function (value) {
+                if (value) {
+                    $rootScope.visible = true;
+                    $http({ method: 'GET', url: 'https://api.mongolab.com/api/1/databases/benisoftlabs/collections/Rally?q={CandidateName:"' + value + '",Month:"' + scope.selectedmonth + '"}&apiKey=50920bb9e4b010d72c561d8a' }).
+                         success(function (data, status, headers, config) {
+                             if (data.length > 0) {
+                                 var array = data[0].Dates;
+                                 jQuery(element).find('table tr td').each(function () {
+                                     if ((jQuery.inArray(jQuery(this).text(), array)) != -1) {
+                                         jQuery(this).addClass('is-visible');
+                                     }
+                                 });
+                                 
+                             }
+                             else {
+                                 jQuery(element).find('table tr td').removeClass('is-visible');
+                             }
+                             $rootScope.visible = false;
+                         }).error(function (data, status, headers, config) {
+                             $rootScope.visible = false;
+                         });
+                }
+            });
+
+            attrs.$observe('selectedmonth', function (value) {
+                
+                if (value == 'April') {
+                    jQuery(element).find('table').find("tr:gt(0)").remove();
+                    jQuery(element).find('table').append(renderCalendar(0));
+                }
+                else if (value == 'May') {
+                    jQuery(element).find('table').find("tr:gt(0)").remove();
+                    jQuery(element).find('table').append(renderCalendar(1));
+                }
+                else if (value == 'June') {
+                    jQuery(element).find('table').find("tr:gt(0)").remove();
+                    jQuery(element).find('table').append(renderCalendar(2));
+                }
+                else if (value == 'July') {
+                    jQuery(element).find('table').find("tr:gt(0)").remove();
+                    jQuery(element).find('table').append(renderCalendar(3));
+                }
+                if (scope.candidatename) {
+                    $rootScope.visible = true;
+                    $http({ method: 'GET', url: 'https://api.mongolab.com/api/1/databases/benisoftlabs/collections/Rally?q={CandidateName:"' + scope.candidatename + '",Month:"' + value + '"}&apiKey=50920bb9e4b010d72c561d8a' }).
+                         success(function (data, status, headers, config) {
+                             if (data.length > 0) {
+                                 var array = data[0].Dates;
+                                 jQuery(element).find('table tr td').each(function () {
+                                     if ((jQuery.inArray(jQuery(this).text(), array)) != -1) {
+                                         jQuery(this).addClass('is-visible');
+                                     }
+                                 });
+
+                             }
+                             else {
+                                 jQuery(element).find('table tr td').removeClass('is-visible');
+                             }
+                             $rootScope.visible = false;
+                         }).error(function (data, status, headers, config) {
+                             $rootScope.visible = false;
+                         });
+                }
+
+            });
+            function renderCalendar(incrementNumber) {
+                var padding = "";
+                var i = 1;  
+                var current = new Date();
+                var month = current.getMonth()+incrementNumber;
+                var day = current.getDate();
+                var year = current.getFullYear();
+                var tempMonth = month + 1; //+1; //Used to match up the current month with the correct start date.
+                var prevMonth = month - 1;
+                var totalDays = ["31", "28", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31"];
+                var tempDate = new Date(tempMonth + ' 1 ,' + year);
+                var tempweekday = tempDate.getDay();
+                var tempweekday2 = tempweekday
+                var dayAmount = totalDays[month];
+                padding += "<tr>";
+                while (tempweekday > 0) {
+                    padding += "<td class='premonth'></td>";
+                    //preAmount++;
+                    tempweekday--;
+                }
+                while (i <= dayAmount) {
+                    if (tempweekday2 > 6) {
+                        tempweekday2 = 0;
+                        padding += "</tr><tr>";
+                    }
+                    if (i == day) {
+                        padding += "<td class='cell'>" + i + "</td>";
+                    } else {
+                        padding += "<td class='cell'>" + i + "</td>";
+                    }
+                    tempweekday2++;
+                    i++;
+                }
+                padding += "</tr>";
+                return padding;
+            }
         }
     }
 });
