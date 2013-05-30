@@ -43,7 +43,17 @@ App.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     $routeProvider.when('/api/Schedule', { templateUrl: '/partials/Schedule.html', controller: loksabhaschedulecontroller, resolve: loksabhaschedulecontroller.resolve });
     $routeProvider.when('/api/ScheduleAssembly/:id', { templateUrl: '/partials/ScheduleAssembly.html', controller: assemblyschedulecontroller, resolve: assemblyschedulecontroller.resolve });
     $routeProvider.when('/api/RallySchedule', { templateUrl: '/partials/RallySchedule.html', controller: rallycontroller });
-    $routeProvider.when('/Rally/:date/:id/:month', { templateUrl: '/partials/RallyDetail.html', controller: rallydetailcontroller,resolve:rallydetailcontroller.resolve });
+        $routeProvider.when('/Rally/:date/:id/:month', {
+            templateUrl: '/partials/RallyDetail.html', controller: 'rallydetailcontroller', resolve: {
+                rallydata: ['$http', '$route', function ($http, $route) {
+                    return $http({
+                        method: 'GET',
+                        url: 'https://api.mongolab.com/api/1/databases/benisoftlabs/collections/RallyDetail?q={"Candidate":"' + $route.current.params.id + '","Month":"' + $route.current.params.month + '","Date":"' + $route.current.params.date + '"}&apiKey=50920bb9e4b010d72c561d8a'
+                    });
+                }],
+
+            }
+        });
     $routeProvider.when('/api/ExitPoll', {
         templateUrl: '/partials/ExitPoll.html', controller: exitpollController, resolve: {
             responseData: ['$http', function ($http) {
@@ -111,22 +121,14 @@ App.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 
 function rallycontroller($scope, $http, $rootScope) {
     $scope.candidates = ['Narendra Modi', 'Rahul Gandhi', 'Manmohan Singh'];
-    $scope.selectedmonth = 'April';
+    $scope.selectedmonth = 'May';
     $rootScope.status = 'ready';
 }
 
-function rallydetailcontroller($scope, rallydata) {
-    $scope.rallyData = rallydata.data;
-}
+App.controller('rallydetailcontroller', ['$scope', 'rallydata', function ($scope, rallydata) {
+   $scope.rallyData = rallydata.data;
+}]);
 
-rallydetailcontroller.resolve = {
-    rallydata: function ($http, $route) {
-        return $http({
-            method: 'GET',
-            url: 'https://api.mongolab.com/api/1/databases/benisoftlabs/collections/RallyDetail?q={"Candidate":"' + $route.current.params.id + '","Month":"' + $route.current.params.month + '","Date":"' + $route.current.params.date + '"}&apiKey=50920bb9e4b010d72c561d8a'
-        });
-    }
-}
 
 function constituencydetailcontroller($scope, $http, $routeParams) {
     $scope.currvalue = $routeParams.id;
@@ -875,19 +877,20 @@ App.directive('calendar', function ($http, $location, $rootScope) {
 
             attrs.$observe('selectedmonth', function (value) {
                 
-                if (value == 'April') {
+             
+                if (value == 'May') {
                     jQuery(element).find('table').find("tr:gt(0)").remove();
                     jQuery(element).find('table').append(renderCalendar(0));
                 }
-                else if (value == 'May') {
+                else if (value == 'June') {
                     jQuery(element).find('table').find("tr:gt(0)").remove();
                     jQuery(element).find('table').append(renderCalendar(1));
                 }
-                else if (value == 'June') {
+                else if (value == 'July') {
                     jQuery(element).find('table').find("tr:gt(0)").remove();
                     jQuery(element).find('table').append(renderCalendar(2));
                 }
-                else if (value == 'July') {
+                else if (value == 'August') {
                     jQuery(element).find('table').find("tr:gt(0)").remove();
                     jQuery(element).find('table').append(renderCalendar(3));
                 }
