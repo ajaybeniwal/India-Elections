@@ -218,6 +218,7 @@
     <Content Include="partials\Schedule.html" />
     <Content Include="partials\ScheduleAssembly.html" />
     <Content Include="PublicContent\TextFile1.txt" />
+    <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\bootstrap-dropdown.js" />
     <Content Include="Scripts\Collapse.js" />

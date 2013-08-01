@@ -1,4 +1,4 @@
-﻿var App = angular.module('testdirectivemodule', []);
+﻿var App = angular.module('testdirectivemodule', ['ui.bootstrap']);
 // Set up a controller and define a model
 
 
@@ -45,7 +45,7 @@ App.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     $routeProvider.when('/api/RallySchedule', { templateUrl: '/partials/RallySchedule.html', controller: rallycontroller });
         $routeProvider.when('/Rally/:date/:id/:month', {
             templateUrl: '/partials/RallyDetail.html', controller: 'rallydetailcontroller', resolve: {
-                rallydata: ['$http', '$route', function ($http, $route) {
+                rallydata: ['$http', '$route', function ($http, $route) {sta
                     return $http({
                         method: 'GET',
                         url: 'https://api.mongolab.com/api/1/databases/benisoftlabs/collections/RallyDetail?q={"Candidate":"' + $route.current.params.id + '","Month":"' + $route.current.params.month + '","Date":"' + $route.current.params.date + '"}&apiKey=50920bb9e4b010d72c561d8a'
@@ -121,7 +121,7 @@ App.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 
 function rallycontroller($scope, $http, $rootScope) {
     $scope.candidates = ['Narendra Modi', 'Rahul Gandhi', 'Manmohan Singh'];
-    $scope.selectedmonth = 'May';
+    $scope.selectedmonth = 'June';
     $rootScope.status = 'ready';
 }
 
@@ -153,17 +153,17 @@ assemblyschedulecontroller.resolve = {
 
 
 
-function indexcontroller($scope, $http, $rootScope, tweetilist, eventsList, $routeParams) {
-    $scope.twitterdata = tweetilist.data;
+function indexcontroller($scope, $http, $rootScope, eventsList, $routeParams) {
+    //$scope.twitterdata = tweetilist.data;
     $scope.eventData = eventsList.data;
     $rootScope.status = 'ready';
 }
 
 indexcontroller.resolve = {
-    tweetilist: function ($http, $route) {
-        var url = "https://api.twitter.com/1/statuses/user_timeline/narendramodi.json?callback=JSON_CALLBACK&count=5"
+    /*tweetilist: function ($http, $route) {
+       // var url = "https://api.twitter.com/1/statuses/user_timeline/narendramodi.json?callback=JSON_CALLBACK&count=5"
         return $http.jsonp(url);
-    },
+    },*/
     eventsList: function ($http, $route) {
         return $http({
             method: 'GET',
@@ -538,7 +538,7 @@ function constituecycontroller($scope, $http, $rootScope, getConstituency) {
         $http({
             method: 'GET',
             //      url: '/Candidate/getAlphabeticalConstituency?group=' + groupvalue
-            url: 'https://api.mongolab.com/api/1/databases/benisoftlabs/collections/Constituency?q={"name" : "/' + groupvalue + '/"}&apiKey=50920bb9e4b010d72c561d8a'
+            url: 'https://api.mongolab.com/api/1/databases/benisoftlabs/collections/Constituency?q={"Group" : "' + groupvalue + '"}&apiKey=50920bb9e4b010d72c561d8a'
         }).
          success(function (data, status, headers, config) {
              $scope.constituencydata = data;
@@ -554,7 +554,7 @@ constituecycontroller.resolve = {
         return $http({
             method: 'GET',
             //  url: '/Candidate/getAlphabeticalConstituency?group=A'
-            url: 'https://api.mongolab.com/api/1/databases/benisoftlabs/collections/Constituency?q={"name" : "/A/"}&apiKey=50920bb9e4b010d72c561d8a'
+            url: 'https://api.mongolab.com/api/1/databases/benisoftlabs/collections/Constituency?q={"Group" : "A"}&apiKey=50920bb9e4b010d72c561d8a'
         });
     }
 }
@@ -704,6 +704,13 @@ var assemblyDetailController = ['$scope', '$http', '$routeParams', 'responseData
    /* $scope.$on('searchComplete', function (event,args) {
         alert(event.targetScope);
     })*/
+
+   /* $scope.constituencies = function (constituencyname) {
+        return $http.get("TextFile.txt").then(function (response) {
+            return limitToFilter(response.data, 15);
+        });
+    };*/
+
     $scope.query = '';
     $scope.search = function () {
         $rootScope.visible = true;
@@ -749,82 +756,6 @@ App.directive('loader', function ($rootScope) {
             $rootScope.$on("$routeChangeSuccess", function () {
                 $rootScope.visible = false;
             });
-        }
-    }
-});
-
-App.directive('test', function () {
-    return {
-        replace: true,
-        template: "<div  class='dropdown span7 ' ng-class='{open:query.length>2}'  style='margin:0px auto;float:none;'><input id='querytext' type='text' class='input-xlarge search-query' placeholder='Enter Constituency to serch' ng-model='query'>\
-         <button class='btn' ng-click='search()'><i class='icon-search'></i></button><ul id='one' class='dropdown-menu' style='min-width:285px;'>\
-        <li ng-repeat='consti in constituency|filter:query'><a>{{consti.name}}</a></li></ul></div>",
-        //        scope: { localprop: '=ngText'},
-        scope: false,
-        link: function (scope, element, attrs) {
-            jQuery("#one").on("click", "li a", function (event) {
-                scope.query = jQuery(this).html();
-                scope.$apply();
-                if (jQuery(element).hasClass('open')) {
-                    jQuery(element).removeClass('open');
-                }
-                event.stopPropagation();
-            })
-            jQuery("html").bind("click", function () {
-                if (jQuery(element).hasClass('open')) {
-                    jQuery(element).removeClass('open');
-                }
-            });
-            jQuery("#querytext").on("keydown", function () {
-                if (!jQuery(element).hasClass('open') && scope.query.length > 2) {
-                    jQuery(element).addClass('open');
-                }
-            });
-
-        }
-    }
-});
-
-
-App.directive('searchbox', function ($http) {
-    return {
-        replace: true,
-        template: "<div class='dropdown' ng-class='{open:query.length>2}'><input id='querytext' type='text' class='input-xlarge search-query' placeholder='Enter Candidate Name to search' ng-model='query'>\
-         <button class='btn ' ng-click='search($event)'><i class='icon-search'></i></button><ul id='one' class='dropdown-menu' style='min-width:285px;'>\
-        <li ng-repeat='data in candidatedata'><a>{{data.Name}}</a></li></ul></div>",
-        scope: false,
-        link: function (scope, element, attrs) {
-            jQuery("#one").on("click", "li a", function (event) {
-                scope.query = jQuery(this).html();
-                scope.$apply();
-                if (jQuery(element).hasClass('open')) {
-                    jQuery(element).removeClass('open');
-                }
-                event.stopPropagation();
-            })
-            jQuery("html").bind("click", function () {
-                if (jQuery(element).hasClass('open')) {
-                    jQuery(element).removeClass('open');
-                }
-            });
-            jQuery("#querytext").on("keydown", function () {
-                if (!jQuery(element).hasClass('open') && scope.query.length > 2) {
-                    jQuery(element).addClass('open');
-                }
-            });
-            scope.$watch('query.length', function (newvalue, oldvalue) {
-                if (newvalue) {
-                    if (parseInt(newvalue) > 2) {
-                        $http({ method: 'GET', url: '/Candidate/GetCandidate?candidatename=' + scope.query }).
-                            success(function (data, status, headers, config) {
-                                scope.candidatedata = data;
-                            }).error(function (data, status, headers, config) {
-                                alert("error while processing the request");
-                            });
-                    }
-                }
-            });
-
         }
     }
 });
@@ -878,21 +809,17 @@ App.directive('calendar', function ($http, $location, $rootScope) {
             attrs.$observe('selectedmonth', function (value) {
                 
              
-                if (value == 'May') {
+                if (value == 'June') {
                     jQuery(element).find('table').find("tr:gt(0)").remove();
                     jQuery(element).find('table').append(renderCalendar(0));
                 }
-                else if (value == 'June') {
+                else if (value == 'July') {
                     jQuery(element).find('table').find("tr:gt(0)").remove();
                     jQuery(element).find('table').append(renderCalendar(1));
                 }
-                else if (value == 'July') {
-                    jQuery(element).find('table').find("tr:gt(0)").remove();
-                    jQuery(element).find('table').append(renderCalendar(2));
-                }
                 else if (value == 'August') {
                     jQuery(element).find('table').find("tr:gt(0)").remove();
-                    jQuery(element).find('table').append(renderCalendar(3));
+                    jQuery(element).find('table').append(renderCalendar(2));
                 }
                 if (scope.candidatename) {
                     $rootScope.visible = true;

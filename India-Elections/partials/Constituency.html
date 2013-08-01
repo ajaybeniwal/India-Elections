@@ -1,14 +1,23 @@
 ﻿<div class="row-fluid" style="margin-top:10px;margin-bottom:10px;">
     <ul class="breadcrumb" style="margin-top: 10px;">
         <li class="active">General Elections 2014<span class="divider">/</span></li>
-        <li><a href="#!/ConstituencyAssembly">Assembly Elections 2013</a> <span class="divider">/</span></li>
+        <li><a href="#!/api/ConstituencyAssembly">Assembly Elections 2013</a> <span class="divider">/</span></li>
     </ul>
 </div>
 
 <div class="row-fluid" style="margin-top:10px;margin-bottom:10px;">
-    <ul class="alphabetical" style="margin-left:0px;">
+    <!--<ul class="alphabetical" style="margin-left:0px;">
         <li class="selected-tab"><a><span>ConstituencyByName</span></a></li>
-        <li class="tab"><a href="/ConstituencyByState"><span>ConstituencyByState</span></a></li>
+        <li class="tab"><a href="#!/ConstituencyByState"><span>ConstituencyByState</span></a></li>
+    </ul>-->
+
+    <ul class="nav nav-pills">
+        <li class="active">
+            <a>ConstituencyByName</a>
+        </li>
+        <li>
+            <a href="#!/ConstituencyByState"><span>ConstituencyByState</span></a>
+        </li>
     </ul>
     
 </div>
@@ -19,7 +28,7 @@
         <li class="span3" ng-repeat="datacandidate in constituencydata">
             <div class="well">
                   <div style="text-align:center" class="caption">
-                    <a href="/contestingCandidate/{{datacandidate.name}}" >{{datacandidate.name}}</a>
+                    <a href="#!/contestingCandidate/{{datacandidate.name}}" >{{datacandidate.name}}</a>
                   </div>
                 </div>
         </li>

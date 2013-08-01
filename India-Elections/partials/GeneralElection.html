@@ -8,7 +8,10 @@
     </ul>
       <div class="container" >
         <div class="row-fluid">
-              <input  test ng-text="query" constituency='constituency' />
+            <div class="span3">
+              <input type="text" ng-model="query" class='input-xlarge' placeholder='Enter Constituency to serch' typeahead="constituency.name  for constituency in constituency|filter:$viewValue" typeahead-min-length="3">
+                </div>
+            <div class="span3"><button class='btn' ng-click='search()'><i class='icon-search'></i></button></div>
          </div>
      </div>
     <ul class="thumbnails" style="margin-top:10px;">
